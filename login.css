@@ -10,7 +10,6 @@ body {
     background: #fffefe;
     padding: 2rem;
     border-radius: 8px;
-   
 }
 .logo {
     position: absolute;
@@ -49,7 +48,6 @@ input.form-control {
 button.btn-google{
     font-size: large;
     text-shadow:#5e5e5e 0px 0px 10px;
-
 }
 button img{
    width: 1.5rem; 
