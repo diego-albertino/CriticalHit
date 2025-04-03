@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    column-gap: normal;
+    height: 100vh;
+    background-color: #fffefe;;
+}
+.login-container {
+    background: #fffefe;
+    padding: 2rem;
+    border-radius: 8px;
+   
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-size: 50px;
+    color: #6F6F6F;
+}
+.logo img {
+    width: 5rem;
+    height: 5rem;
+}
+.logo span {
+    color: #e74c3c;
+}
+.btn-google {
+    background-color: #e74c3c;
+    color: #fffefe;
+}
+.btn-google:hover {
+    transform: scale(1.05,0.5s);
+    color: #6F6F6F;
+    text-shadow:none;
+}
+h3.mb-4 {
+    color: #6F6F6F;
+    font-size: 25px;
+    font-weight: bold;
+    padding-bottom: 5rem;
+    }
+input.form-control {
+    border-color: #e74c3c;
+}   
+button.btn-google{
+    font-size: large;
+    text-shadow:#5e5e5e 0px 0px 10px;
+
+}
+button img{
+   width: 1.5rem; 
+}
