@@ -19,7 +19,7 @@
     height: 6.5625rem;
     align-items: center;
     justify-content: center;
-    margin-right: -20px; 
+    margin-right: -11px; 
     vertical-align: middle; 
 }
 
@@ -33,19 +33,36 @@
     gap: 20px; /* Espaçamento adicional entre os itens */
 }
 
-
-/* .box-search {
-    margin-left: 100px;  TENTEI DIMINUIR O ESPAÇO ENTRE O PLATAFORMA E A CAIXA DE PESQUISA, MAS NÃO FUNCIONOU.
-} */ 
+.input-group {
+    width: 259px;
+    height: 44px;
+    margin-left: 42px;
+}
 
 .box-search-input {
-    width: 301px;
     height: 44px;
     border-radius: 2px;
     background-color: #FE5655;
+    padding: 11px;
+    border: none;
 }
 
 .box-search-input::placeholder {
     color: #FFFFFF; 
     opacity: 70%;
+}
+
+.box-search-input:focus {
+    background-color: #FE5655;
+    outline: none; 
+    box-shadow: none; 
+}
+
+#search-icon {
+    background-color: #FE5655;
+    margin: 0;
+    border-radius: 2px;
+    margin: 0 4px 0 -2px;
+    border: none;
+    
 }
