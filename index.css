@@ -66,3 +66,44 @@
     border: none;
     
 }
+
+.nav-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -16px;
+    margin-left: 57px;
+    margin-bottom: -6px;
+    gap: 4px;
+}
+
+.nav-login i {
+    font-size: 22px; /* Define o tamanho do ícone */
+    color: #666665;
+}
+
+.nav-login a{ 
+    font-size: 22px;
+    text-decoration: none;
+    color: #6f6f6f;
+    font-weight: bold;
+    
+}
+
+.container-slider {
+    color: #6f6f6f;
+    margin-left: 20px;
+    font-family: 'Rambla';
+
+}
+
+.container-slider h4 {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+.container-slider h3 {
+    font-size: 37px;
+    margin-top: 15px;
+}
