@@ -6,18 +6,18 @@ body {
     height: 100vh;
     background-color: #fffefe;;
 }
-.login-container {
-    background: #fffefe;
+.login-container {    
     padding: 2rem;
     border-radius: 8px;
+    color: #6F6F6F;
+   
 }
 .logo {
     position: absolute;
     top: 10px;
     left: 15px;
-    font-size: 1.8rem;
+    font-size: 3rem;
     font-weight: bold;
-    font-size: 50px;
     color: #6F6F6F;
 }
 .logo img {
@@ -33,21 +33,20 @@ body {
 }
 .btn-google:hover {
     transform: scale(1.05,0.5s);
-    color: #6F6F6F;
+    color: #e74d3c;
     text-shadow:none;
 }
 h3.mb-4 {
-    color: #6F6F6F;
     font-size: 25px;
     font-weight: bold;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
     }
 input.form-control {
     border-color: #e74c3c;
 }   
 button.btn-google{
     font-size: large;
-    text-shadow:#5e5e5e 0px 0px 10px;
+
 }
 button img{
    width: 1.5rem; 
