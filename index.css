@@ -1,49 +1,112 @@
+body {
+    padding-bottom: 5%;
+}
+.carousel-control-prev-icon{
+    background-image: url("seta.png");
+    opacity: 1.0;
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-control-next-icon{
+    background-image: url("seta2.png");
+    opacity: 1.0;
+    width: 50px;
+    height: 50px;
+}
 .navbar {
-    font-size: 22px;
-    font-family: 'Rambla';
-    font-weight: bold;
-}
-
-
-.navbar-logo {
-    margin-right: 58px;
-}
-
-.navbar-logo a {
-    font-size: 77px;
-    color: #6f6f6f;
-}
-
-.navbar-logo img {
-    width: 6.813rem;
-    height: 6.5625rem;
-    align-items: center;
-    justify-content: center;
-    margin-right: -11px; 
-    vertical-align: middle; 
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
 }
 
 .navbar-logo span{
+    color: #9f9f9f;
+    font-size: 3rem;
+}
+
+#logo{
+    width: 5rem;
+    height: 5rem;
+    margin-top: 10px;
+}
+.navbar-logo {
+margin-right: 58px;
+}
+
+.bi-person-fill{
+    color: #6f6f6f;
+    margin-right: 20px;
+}
+
+#critical{
     color: #FE5655;
+    font-size: 3rem;
+    margin-top: -10px;
+}
+#hit{
+    color: #6f6f6f;
+    font-size: 3rem;
+    margin-top: -10px;
 }
 
-.navbar-nav {
-    display: flex;
-    justify-content: space-evenly; 
-    gap: 20px; /* Espaçamento adicional entre os itens */
+#search{
+    margin-left: 50px;
 }
 
-.input-group {
-    width: 259px;
-    height: 44px;
-    margin-left: 42px;
+.navbar-logo img {
+top: 10px;
+left: 15px;
+width: 5rem;
+height: 5rem;
+align-items: center;
+justify-content: center;    
+}
+
+.me-1{
+    color: #6f6f6f;
+    
+}
+.navbar-logo a {
+font-size: 3rem;
+color: #6f6f6f;
+}
+
+h4 {
+font-size: 18px;
+line-height: 22px;
+margin-top: 70px;
+margin-bottom: -10px;
+color:  #6F6F6F;
+}
+
+h3  {
+font-size: 28px;
+margin-top: 15px;
+color:  #6F6F6F;
+padding-bottom: 25px;
+}
+
+.nav-login i {
+    font-size: 22px; 
+    color: #666665;
+}
+
+.nav-login a{ 
+    font-size: 20px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #6f6f6f;
+}
+
+.nav-item a{
+    font-size: 18px;
+    color: #6f6f6f;
 }
 
 .box-search-input {
-    height: 44px;
-    border-radius: 2px;
-    background-color: #FE5655;
-    padding: 11px;
+    height: 44px; 
+    background-color: #FE5655;;
     border: none;
 }
 
@@ -52,58 +115,35 @@
     opacity: 70%;
 }
 
-.box-search-input:focus {
+.btn-danger {
     background-color: #FE5655;
-    outline: none; 
-    box-shadow: none; 
+    color: #FFFFFF;
+    border: none;  
 }
 
-#search-icon {
-    background-color: #FE5655;
-    margin: 0;
-    border-radius: 2px;
-    margin: 0 4px 0 -2px;
-    border: none;
-    
+.game-card {
+    text-align: center;
+}
+.game-card img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.nav-login {
+.game-info {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -16px;
-    margin-left: 57px;
-    margin-bottom: -6px;
-    gap: 4px;
-}
-
-.nav-login i {
-    font-size: 22px; /* Define o tamanho do ícone */
-    color: #666665;
-}
-
-.nav-login a{ 
-    font-size: 22px;
-    text-decoration: none;
-    color: #6f6f6f;
-    font-weight: bold;
-    
-}
-
-.container-slider {
-    color: #6f6f6f;
-    margin-left: 20px;
-    font-family: 'Rambla';
-
-}
-
-.container-slider h4 {
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 400;
-}
-
-.container-slider h3 {
-    font-size: 37px;
-    margin-top: 15px;
-}
+    justify-content: space-between; /* Espaço entre o nome e as estrelas */
+    align-items: center; /* Alinha verticalmente no centro */
+  }
+  
+  .game-info h5 {
+    margin: 0; /* Remove margens do título */
+    padding-top: 10px; 
+    color:#6f6f6f;
+    font-size: 1.3rem; /* Ajusta o tamanho da fonte */
+  }
+  
+  .stars {
+    font-size: 1.5rem; /* Ajusta o tamanho das estrelas */
+    padding-top: 10px;
+    color: #FFD700; /* Cor dourada para as estrelas */
+  }
