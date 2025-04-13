@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/04/2025 às 16:35
+-- Tempo de geração: 13/04/2025 às 20:38
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `comentario` (
   `id_com` varchar(10) NOT NULL,
-  `texto` varchar(255) NOT NULL,
+  `texto` varchar(1000) NOT NULL,
   `data` date NOT NULL,
-  `nota_avaliacao` int(2) NOT NULL,
+  `nota_avaliacao` char(1) NOT NULL,
   `id_jogo` varchar(255) NOT NULL,
   `id_usuario` varchar(10) NOT NULL,
   `id_plataforma` varchar(10) NOT NULL
@@ -69,7 +69,7 @@ CREATE TABLE `plataforma` (
 
 CREATE TABLE `usuario` (
   `id` varchar(10) NOT NULL,
-  `nome` int(40) NOT NULL,
+  `nome` varchar(40) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` char(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
