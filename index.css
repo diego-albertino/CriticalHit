@@ -1,149 +1,148 @@
 body {
-    padding-bottom: 5%;
+  padding-bottom: 5%;
 }
-.carousel-control-prev-icon{
-    background-image: url("seta.png");
-    opacity: 1.0;
-    width: 50px;
-    height: 50px;
+.carousel-control-prev-icon {
+  background-image: url("pictures/seta.png");
+  opacity: 1;
+  width: 50px;
+  height: 50px;
 }
 
-.carousel-control-next-icon{
-    background-image: url("seta2.png");
-    opacity: 1.0;
-    width: 50px;
-    height: 50px;
+.carousel-control-next-icon {
+  background-image: url("pictures/seta2.png");
+  opacity: 1;
+  width: 50px;
+  height: 50px;
 }
 .navbar {
-font-size: 20px;
-font-weight: bold;
-margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.navbar-logo span{
-    color: #9f9f9f;
-    font-size: 3rem;
+.navbar-logo span {
+  color: #9f9f9f;
+  font-size: 3rem;
 }
 
-#logo{
-    width: 5rem;
-    height: 5rem;
-    margin-top: 10px;
+#logo {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 10px;
 }
 .navbar-logo {
-margin-right: 58px;
+  margin-right: 58px;
 }
 
-.bi-person-fill{
-    color: #6f6f6f;
-    margin-right: 20px;
+.bi-person-fill {
+  color: #6f6f6f;
+  margin-right: 20px;
 }
 
-#critical{
-    color: #FE5655;
-    font-size: 3rem;
-    margin-top: -10px;
+#critical {
+  color: #fe5655;
+  font-size: 3rem;
+  margin-top: -10px;
 }
-#hit{
-    color: #6f6f6f;
-    font-size: 3rem;
-    margin-top: -10px;
+#hit {
+  color: #6f6f6f;
+  font-size: 3rem;
+  margin-top: -10px;
 }
 
-#search{
-    margin-left: 50px;
+#search {
+  margin-left: 50px;
 }
 
 .navbar-logo img {
-top: 10px;
-left: 15px;
-width: 5rem;
-height: 5rem;
-align-items: center;
-justify-content: center;    
+  top: 10px;
+  left: 15px;
+  width: 5rem;
+  height: 5rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.me-1{
-    color: #6f6f6f;
-    
+.me-1 {
+  color: #6f6f6f;
 }
 .navbar-logo a {
-font-size: 3rem;
-color: #6f6f6f;
+  font-size: 3rem;
+  color: #6f6f6f;
 }
 
 h4 {
-font-size: 18px;
-line-height: 22px;
-margin-top: 70px;
-margin-bottom: -10px;
-color:  #6F6F6F;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 70px;
+  margin-bottom: -10px;
+  color: #6f6f6f;
 }
 
-h3  {
-font-size: 28px;
-margin-top: 15px;
-color:  #6F6F6F;
-padding-bottom: 25px;
+h3 {
+  font-size: 28px;
+  margin-top: 15px;
+  color: #6f6f6f;
+  padding-bottom: 25px;
 }
 
 .nav-login i {
-    font-size: 22px; 
-    color: #666665;
+  font-size: 22px;
+  color: #666665;
 }
 
-.nav-login a{ 
-    font-size: 20px;
-    margin-left: 10px;
-    text-decoration: none;
-    color: #6f6f6f;
+.nav-login a {
+  font-size: 20px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #6f6f6f;
 }
 
-.nav-item a{
-    font-size: 18px;
-    color: #6f6f6f;
+.nav-item a {
+  font-size: 18px;
+  color: #6f6f6f;
 }
 
 .box-search-input {
-    height: 44px; 
-    background-color: #FE5655;;
-    border: none;
+  height: 44px;
+  background-color: #fe5655;
+  border: none;
 }
 
 .box-search-input::placeholder {
-    color: #FFFFFF; 
-    opacity: 70%;
+  color: #ffffff;
+  opacity: 70%;
 }
 
 .btn-danger {
-    background-color: #FE5655;
-    color: #FFFFFF;
-    border: none;  
+  background-color: #fe5655;
+  color: #ffffff;
+  border: none;
 }
 
 .game-card {
-    text-align: center;
+  text-align: center;
 }
 .game-card img {
-    width: 100%;
-    border-radius: 10px;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .game-info {
-    display: flex;
-    justify-content: space-between; /* Espaço entre o nome e as estrelas */
-    align-items: center; /* Alinha verticalmente no centro */
-  }
-  
-  .game-info h5 {
-    margin: 0; /* Remove margens do título */
-    padding-top: 10px; 
-    color:#6f6f6f;
-    font-size: 1.3rem; /* Ajusta o tamanho da fonte */
-  }
-  
-  .stars {
-    font-size: 1.5rem; /* Ajusta o tamanho das estrelas */
-    padding-top: 10px;
-    color: #FFD700; /* Cor dourada para as estrelas */
-  }
+  display: flex;
+  justify-content: space-between; /* Espaço entre o nome e as estrelas */
+  align-items: center; /* Alinha verticalmente no centro */
+}
+
+.game-info h5 {
+  margin: 0; /* Remove margens do título */
+  padding-top: 10px;
+  color: #6f6f6f;
+  font-size: 1.3rem; /* Ajusta o tamanho da fonte */
+}
+
+.stars {
+  font-size: 1.5rem; /* Ajusta o tamanho das estrelas */
+  padding-top: 10px;
+  color: #ffd700; /* Cor dourada para as estrelas */
+}
