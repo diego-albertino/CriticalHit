@@ -8,6 +8,9 @@ if (isset($_GET['contaCriada'])) {
 if (isset($_GET['contaJaCriada'])) {
     $contaJaCriada = $_GET['contaJaCriada'];
 }
+if (isset($_GET['senhaRepErro'])) {
+    $senhaRepErro = $_GET['senhaRepErro'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,21 +28,30 @@ if (isset($_GET['contaJaCriada'])) {
         <img src="pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
     </div>
     <div class="login-container">
-        <h3 class="mb-4">Que bom vê-lo novamente</h3>
-        <?php if (isset($nome)):?>
+        <h3 class="mb-4">Crie sua conta na CriticalHit</h3>
+        <?php if (isset($contaJaCriada)):?>
             <div class="alert alert-danger" role="alert">
-                Credenciais Incorretas!
+                Já existe um usuário com essas credenciais.<br>
+                Favor, utilizar outro e-mail.
+            </div>
+            <?php elseif (isset($senhaRepErro)):?>
+            <div class="alert alert-danger" role="alert">
+                A confirmação de senha falhou.
             </div>
             <?php endif; ?>
         <i class="bi bi-person-fill"></i>
-        <form action="autenticacao.php" method="POST">
+        <form action="registrar_conta.php" method="POST">
         <input type="username" class="form-control mb-3" placeholder="Usuário" id="user" name="username" required>
+        <i class="bi bi-envelope-fill"></i>
+        <input type="email" class="form-control mb-3" placeholder="E-mail" id="email" name="email" required>
         <i class="bi bi-key-fill"></i>
         <input type="password" class="form-control mb-3" placeholder="Senha" id="pass" name="pass" required>
-        <button class="btn btn-google btn-lg w-100" type="submit">Continuar</button>
+        <i class="bi bi-key-fill"></i>
+        <input type="password" class="form-control mb-3" placeholder="Repita sua senha" id="passConfirma" name="passConfirma" required>
+        <button class="btn btn-google btn-lg w-100" type="submit">Criar conta</button>
         </form>
         <div class="text-center mt-3">
-            <p>Não tem uma conta? <a href="cadastro.php">Crie uma</a></p>
-    </div>
+            <p>Já tem uma conta? <a href="index.php">Entre</a></p>
+        </div>
 </body>
 </html>
