@@ -51,3 +51,7 @@ button.btn-google{
 button img{
    width: 1.5rem; 
 }
+.authLinks{
+    color:#e74c3c;
+    text-decoration: none;
+}

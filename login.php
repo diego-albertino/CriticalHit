@@ -1,6 +1,6 @@
 <?php
-if (isset($_GET['nome'])) {
-    $nome = $_GET['nome'];
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
 }
 if (isset($_GET['contaCriada'])) {
     $contaCriada = $_GET['contaCriada'];
@@ -27,20 +27,25 @@ if (isset($_GET['contaJaCriada'])) {
     </div>
     <div class="login-container">
         <h3 class="mb-4">Que bom vê-lo novamente</h3>
-        <?php if (isset($nome)):?>
+        <?php if (isset($error)):?>
             <div class="alert alert-danger" role="alert">
                 Credenciais Incorretas!
             </div>
+            <?php elseif (isset($contaCriada)):?>
+            <div class="alert alert-success" role="alert">
+                Conta criada com sucesso!<br>
+                Faça login para continuar.
+            </div>
             <?php endif; ?>
         <i class="bi bi-person-fill"></i>
-        <form action="autenticacao.php" method="POST">
-        <input type="username" class="form-control mb-3" placeholder="Usuário" id="user" name="username" required>
+        <form action="auth/autenticacao.php" method="POST">
+        <input type="text" class="form-control mb-3" placeholder="Usuário" id="user" name="username" required>
         <i class="bi bi-key-fill"></i>
         <input type="password" class="form-control mb-3" placeholder="Senha" id="pass" name="pass" required>
         <button class="btn btn-google btn-lg w-100" type="submit">Continuar</button>
         </form>
         <div class="text-center mt-3">
-            <p>Não tem uma conta? <a href="cadastro.php">Crie uma</a></p>
+            <p>Não tem uma conta? <a class="authLinks" href="cadastro.php">Crie uma</a></p>
     </div>
 </body>
 </html>

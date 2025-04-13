@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/04/2025 às 20:38
+-- Tempo de geração: 13/04/2025 às 21:34
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -28,13 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comentario` (
-  `id_com` varchar(10) NOT NULL,
+  `id_com` int(10) NOT NULL,
   `texto` varchar(1000) NOT NULL,
   `data` date NOT NULL,
   `nota_avaliacao` char(1) NOT NULL,
-  `id_jogo` varchar(255) NOT NULL,
-  `id_usuario` varchar(10) NOT NULL,
-  `id_plataforma` varchar(10) NOT NULL
+  `id_jogo` int(10) NOT NULL,
+  `id_usuario` int(10) NOT NULL,
+  `id_plataforma` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -44,7 +44,7 @@ CREATE TABLE `comentario` (
 --
 
 CREATE TABLE `jogo` (
-  `id` varchar(255) NOT NULL,
+  `id` int(10) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `url_img` int(255) NOT NULL,
   `descricao` varchar(255) NOT NULL
@@ -57,7 +57,7 @@ CREATE TABLE `jogo` (
 --
 
 CREATE TABLE `plataforma` (
-  `id` varchar(5) NOT NULL,
+  `id` int(5) NOT NULL,
   `nome` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -68,11 +68,18 @@ CREATE TABLE `plataforma` (
 --
 
 CREATE TABLE `usuario` (
-  `id` varchar(10) NOT NULL,
+  `id` int(10) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `email` varchar(255) NOT NULL,
   `senha` char(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
+(1, 'Leandro', 'leandro@gmail.com', '$2y$10$mOxF3h9pAdFCA/gLM3Tr5uUa.9uzkn62VDyWeEKnV9jPUdjpFu5Za');
 
 --
 -- Índices para tabelas despejadas
@@ -83,8 +90,8 @@ CREATE TABLE `usuario` (
 --
 ALTER TABLE `comentario`
   ADD PRIMARY KEY (`id_com`),
-  ADD KEY `id_jogo` (`id_jogo`),
   ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_jogo` (`id_jogo`),
   ADD KEY `id_plataforma` (`id_plataforma`);
 
 --
@@ -106,6 +113,28 @@ ALTER TABLE `usuario`
   ADD PRIMARY KEY (`id`);
 
 --
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `jogo`
+--
+ALTER TABLE `jogo`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- Restrições para tabelas despejadas
 --
 
@@ -113,8 +142,8 @@ ALTER TABLE `usuario`
 -- Restrições para tabelas `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_jogo`) REFERENCES `jogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`id_jogo`) REFERENCES `jogo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comentario_ibfk_3` FOREIGN KEY (`id_plataforma`) REFERENCES `plataforma` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
