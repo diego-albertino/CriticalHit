@@ -52,7 +52,7 @@ if (isset($_GET['senhaRepErro'])) {
         <button class="btn btn-google btn-lg w-100" type="submit">Criar conta</button>
         </form>
         <div class="text-center mt-3">
-            <p>Já tem uma conta? <a href="index.php">Entre</a></p>
+            <p>Já tem uma conta? <a href="login.php">Entre</a></p>
         </div>
 </body>
 </html>

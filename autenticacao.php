@@ -15,7 +15,7 @@ $password = "";
 $database = "criticalhit";
 
 $mysqli = new mysqli($localhostbd, $usernamebd, $password, $database);
-$stmt = $mysqli->prepare("SELECT senha FROM usuarios WHERE email = ?");
+$stmt = $mysqli->prepare("SELECT senha FROM usuario WHERE nome = ?");
 $stmt->bind_param("s", $EMAIL);
 $stmt->execute();
 $stmt->store_result();
