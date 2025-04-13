@@ -33,7 +33,7 @@ if (isset($_GET['senhaRepErro'])) {
         <?php if (isset($contaJaCriada)):?>
             <div class="alert alert-danger" role="alert">
                 Já existe um usuário com essas credenciais.<br>
-                Favor, utilizar outro e-mail.
+                Favor, utilizar outro e-mail ou nome de usuário.
             </div>
             <?php elseif (isset($senhaRepErro)):?>
             <div class="alert alert-danger" role="alert">
@@ -41,7 +41,7 @@ if (isset($_GET['senhaRepErro'])) {
             </div>
             <?php endif; ?>
         <i class="bi bi-person-fill"></i>
-        <form action="registrar_conta.php" method="POST">
+        <form action="auth/criarconta.php" method="POST">
         <input type="username" class="form-control mb-3" placeholder="Usuário" id="user" name="username" required>
         <i class="bi bi-envelope-fill"></i>
         <input type="email" class="form-control mb-3" placeholder="E-mail" id="email" name="email" required>
@@ -52,7 +52,7 @@ if (isset($_GET['senhaRepErro'])) {
         <button class="btn btn-google btn-lg w-100" type="submit">Criar conta</button>
         </form>
         <div class="text-center mt-3">
-            <p>Já tem uma conta? <a href="login.php">Entre</a></p>
+            <p>Já tem uma conta? <a class="authLinks" href="login.php">Entre</a></p>
         </div>
 </body>
 </html>
