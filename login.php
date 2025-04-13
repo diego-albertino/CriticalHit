@@ -1,0 +1,41 @@
+<?php
+if (isset($_GET['nome'])) {
+    $nome = $_GET['nome'];
+}
+if (isset($_GET['contaCriada'])) {
+    $contaCriada = $_GET['contaCriada'];
+}
+if (isset($_GET['contaJaCriada'])) {
+    $contaJaCriada = $_GET['contaJaCriada'];
+}
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="logo mb-3">
+        <img src="pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+    </div>
+    <div class="login-container">
+        <h3 class="mb-4">Que bom vê-lo novamente</h3>
+        <?php if (isset($nome)):?>
+            <div class="alert alert-danger" role="alert">
+                Credenciais Incorretas!
+            </div>
+            <?php endif; ?>
+        <i class="bi bi-person-fill"></i>
+        <input type="email" class="form-control mb-3" placeholder="Usuário">
+        <i class="bi bi-key-fill"></i>
+        <input type="email" class="form-control mb-3" placeholder="Senha">
+        <button class="btn btn-google btn-lg w-100" type="submit">Continuar</button>
+    </div>
+</body>
+</html>
