@@ -3,13 +3,38 @@
     font-family: 'Rambla';
 }
 
+#game-details {
+    display: flex;
+    flex-direction: row; /* Alinha a imagem e o texto horizontalmente */
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
 #game-details h1 {
     font-size: 44px;
     font-weight: bold;
+    text-align: center; /* Centraliza o texto */
     color: #fe5655;
+    margin-bottom: 92px; /* Espaçamento entre o título e a descrição */
 }
 
 #game-details img {
     height: 424px;
     width: 624px;
+}
+
+#game-details p {
+    font-size: 24px;
+    color: #6F6F6F;
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 76px; /* Espaçamento entre a descrição e a avaliação */
+}
+
+.rating {
+    font-size: 79px;
+    text-align: center; /* Centraliza o texto */
+    color: #FEB954;
+}
+
+#game-details h2{
+    color:#6F6F6F;
 }

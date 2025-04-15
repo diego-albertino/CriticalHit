@@ -3,13 +3,13 @@ const games = {
   "stardew-valley": {
     title: "Stardew Valley",
     image: "pictures/stardew.png",
-    description: "Um simulador de fazenda relaxante e viciante.",
+    description: "Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida. Será que você vai aprender a viver da terra, a transformar esse matagal em um próspero lar?",
     rating: "★★★★★",
   },
   "nfs-heat": {
     title: "Need For Speed Heat",
     image: "pictures/nfs.png",
-    description: "Corridas emocionantes em alta velocidade.",
+    description: "Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.",
     rating: "★★",
   },
   "silent-hill-2": {
@@ -64,16 +64,19 @@ function loadGameDetails() {
 
     // Renderizar os detalhes do jogo
     gameDetails.innerHTML = `
-        <h1>${game.title}</h1>
-        <img src="${game.image}" alt="${game.title}" />
-        <p>${game.description}</p>
-        <div class="rating">Avaliação: ${game.rating}</div>
-      `;
+    <div style="display: flex; align-items: flex-start; gap: 90px">
+        <img src="${game.image}" alt="${game.title}" style="height: 424px; width: 624px;" />
+        <div style="display: flex; flex-direction: column;">
+            <h1>${game.title}</h1>
+            <p>${game.description}</p>
+            <div class="rating"> ${game.rating}</div>
+        </div>
+    </div>
+  `;
   } else {
     // Caso o jogo não seja encontrado
     document.getElementById("game-details").innerHTML = `
-        <h1>Jogo não encontrado</h1>
-        <p>O jogo que você está procurando não existe.</p>
+        <h2>Jogo não encontrado</h2>
       `;
   }
 }
