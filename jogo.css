@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Rambla:wght@400&display=swap');
+* {
+    font-family: 'Rambla';
+}
+
+#game-details h1 {
+    font-size: 44px;
+    font-weight: bold;
+    color: #fe5655;
+}
+
+#game-details img {
+    height: 424px;
+    width: 624px;
+}
