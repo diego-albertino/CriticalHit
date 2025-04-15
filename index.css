@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Rambla:wght@400&display=swap');
+* {
+    font-family: 'Rambla';
+}
+
 body {
   padding-bottom: 5%;
 }
@@ -26,8 +31,8 @@ body {
 }
 
 #logo {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   margin-top: 10px;
 }
 .navbar-logo {

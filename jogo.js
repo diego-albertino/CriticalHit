@@ -7,7 +7,7 @@ const games = {
     rating: "★★★★★",
   },
   "nfs-heat": {
-    title: "NFS Heat",
+    title: "Need For Speed Heat",
     image: "pictures/nfs.png",
     description: "Corridas emocionantes em alta velocidade.",
     rating: "★★",

@@ -26,10 +26,10 @@ if (isset($_GET['senhaRepErro'])) {
 </head>
 <body>
     <div class="logo mb-3">
-        <img src="pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+        <img src="pictures/criticalogo.jpg" alt="criticalhit" width="50"> <span>critical</span>hit
     </div>
     <div class="login-container">
-        <h3 class="mb-4">Crie sua conta na CriticalHit</h3>
+        <h3 class="mb-4">Crie sua conta no criticalhit</h3>
         <?php if (isset($contaJaCriada)):?>
             <div class="alert alert-danger" role="alert">
                 Já existe um usuário com essas credenciais.<br>
