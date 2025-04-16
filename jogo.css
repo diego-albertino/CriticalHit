@@ -5,36 +5,82 @@
 
 #game-details {
     display: flex;
-    flex-direction: row; /* Alinha a imagem e o texto horizontalmente */
-    align-items: flex-start; /* Alinha os itens no topo */
-}
-
-#game-details h1 {
-    font-size: 44px;
-    font-weight: bold;
-    text-align: center; /* Centraliza o texto */
-    color: #fe5655;
-    margin-bottom: 92px; /* Espaçamento entre o título e a descrição */
-}
-
-#game-details img {
-    height: 424px;
-    width: 624px;
-}
-
-#game-details p {
-    font-size: 24px;
-    color: #6F6F6F;
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 76px; /* Espaçamento entre a descrição e a avaliação */
-}
-
-.rating {
-    font-size: 79px;
-    text-align: center; /* Centraliza o texto */
-    color: #FEB954;
+    flex-direction: column; /* Organiza os elementos em coluna */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    margin-top: 180px; /* Espaçamento acima do container */
 }
 
 #game-details h2{
     color:#6F6F6F;
 }
+
+/* Estilo do contêiner principal do jogo */
+.game-container {
+    display: flex;
+    gap: 90px; /* Espaçamento entre a imagem e as informações */
+}
+
+/* Estilo da imagem do jogo */
+.game-image {
+    height: 424px;
+    width: 624px;
+}
+
+/* Informações do jogo (título, descrição, avaliação) */
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os elementos */
+}
+
+/* Título do jogo */
+.game-title {
+    font-size: 44px;
+    font-weight: bold;
+    text-align: center;
+    color: #fe5655;
+    margin-bottom: 92px; /* Espaçamento entre o título e a descrição */
+}
+
+/* Descrição do jogo */
+.game-description {
+    font-size: 24px;
+    color: #6F6F6F;
+    text-align: center;
+    margin-bottom: 76px; /* Espaçamento entre a descrição e a avaliação */
+}
+
+/* Avaliação (estrelas) */
+.rating {
+    font-size: 79px;
+    text-align: center;
+    color: #FEB954;
+    margin-bottom: 71px; /* Espaçamento entre a avaliação e o botão "Comentar" */
+}
+
+/* Contêiner do botão "Comentar" */
+.comment-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
+/* Botão "Comentar" com contorno vermelho */
+.btn-comentar {
+    background-color: white; /* Fundo branco */
+    color: #fe5655; /* Texto vermelho */
+    border: 2px solid #fe5655; /* Contorno vermelho */
+    border-radius: 10px; /* Bordas arredondadas */
+    font-size: 22px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: all 0.3s ease; /* Transição suave para hover */
+    width: 556px; /* Largura do botão */
+}
+
+/* Estilo ao passar o mouse */
+.btn-comentar:hover {
+    background-color: #fe5655; /* Fundo vermelho ao passar o mouse */
+    color: white; /* Texto branco ao passar o mouse */
+}
+
+
