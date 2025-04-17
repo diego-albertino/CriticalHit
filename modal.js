@@ -63,5 +63,5 @@ function submitComment() {
  * Adiciona um evento de clique ao botão de envio para chamar a função submitRating.
  * O botão deve ter o ID 'submit-button'.
  */
-document.getElementById('submit-button').addEventListener('click', submitRating);
+document.getElementById('submit-button').addEventListener('click', submitComment);
 
