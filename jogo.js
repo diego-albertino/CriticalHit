@@ -74,7 +74,7 @@ function loadGameDetails() {
         </div>
     </div>
     <div class="comment-container">
-        <button type="submit" class="btn btn-comentar btn-lg">Comentar</button>
+        <button type="button" class="btn btn-comentar btn-lg" onclick="OpenModal()">Comentar</button>
     </div>
     `;
   } else {
