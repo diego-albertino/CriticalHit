@@ -19,7 +19,8 @@
         <!-- Os detalhes do jogo serão carregados aqui -->
       </div>
 
-      <div id="modal" class="modal hidden">
+      <!-- Mini-janela para fazer os comentários -->
+      <form id="modal" class="modal hidden">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
@@ -34,7 +35,15 @@
             <span data-value="5">★</span>
           </div>
           <textarea id="comment" placeholder="Descreva sua experiência (opcional)"></textarea>
-          <button id="submit-button" aria-label="Enviar avaliação">ENVIAR</button>
+          <button id="submit-button" aria-label="Enviar avaliação" type="submit">ENVIAR</button>
+        </div>
+      </form>
+      <!-- Fim da mini-janela -->
+
+      <!-- Barra de visualização dos comentários -->
+      <div class="d-flex justify-content-center">
+        <div class="rounded-2 bg-body-secondary p-3 w-50 mt-5" id="commentPost">
+          <h5 class="text-center mb-3">Comentários</h5>
         </div>
       </div>
     </div>
@@ -49,6 +58,7 @@
     </script>
     <script src="jogo.js"></script>
     <script src="modal.js"></script>
+    <script src="commentPost.js"></script>
     <script>
       fetch("footer.html")
         .then((response) => response.text())

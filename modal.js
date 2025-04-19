@@ -4,7 +4,7 @@
  * ela e todas as estrelas anteriores ficam preenchidas.
  * O valor da estrela clicada é armazenado na variável selectedRating.
  */
-const stars = document.querySelectorAll('#star-container span');
+const stars = document.querySelectorAll("#star-container span");
 let selectedRating = 0;
 
 /**
@@ -12,9 +12,10 @@ let selectedRating = 0;
  * Quando uma estrela é clicada, atualiza a avaliação selecionada e
  * chama a função updateStars para atualizar a aparência das estrelas.
  */
-stars.forEach(star => {
-  star.addEventListener('click', () => {
-    selectedRating = parseInt(star.getAttribute('data-value')); // Obtém o valor da estrela clicada
+stars.forEach((star) => {
+  star.addEventListener("click", () => {
+    selectedRating = parseInt(star.getAttribute("data-value")); // Obtém o valor da estrela clicada
+    localStorage.setItem("selectedRating", selectedRating); // Armazena no localStorage com a chave "selectedRating"
     updateStars(selectedRating);
   });
 });
@@ -24,8 +25,8 @@ stars.forEach(star => {
  * Preenche as estrelas até o valor da avaliação e esvazia as restantes.
  */
 function updateStars(rating) {
-  stars.forEach(star => {
-    star.classList.toggle('active', parseInt(star.getAttribute('data-value')) <= rating);
+  stars.forEach((star) => {
+    star.classList.toggle("active", parseInt(star.getAttribute("data-value")) <= rating);
   });
 }
 
@@ -34,8 +35,8 @@ function updateStars(rating) {
  * O modal deve ter o ID 'modal' e deve ser exibido ao clicar no botão "comentar".
  */
 function OpenModal() {
-    const modal = document.getElementById("modal");
-    modal.classList.remove("hidden"); // Exibe o modal
+  const modal = document.getElementById("modal");
+  modal.classList.remove("hidden"); // Exibe o modal
 }
 
 /**
@@ -43,8 +44,8 @@ function OpenModal() {
  * O modal deve ter o ID 'modal' e deve ser ocultado ao clicar no botão "x".
  */
 function closeModal() {
-    const modal = document.getElementById("modal");
-    modal.classList.add("hidden"); // Oculta o modal
+  const modal = document.getElementById("modal");
+  modal.classList.add("hidden"); // Oculta o modal
 }
 
 /**
@@ -55,13 +56,22 @@ function closeModal() {
  * @function
  */
 function submitComment() {
-  const comment = document.getElementById('comment').value;
+  const comment = document.getElementById("comment").value;
   alert(`Avaliação enviada!\nNota: ${selectedRating}\nComentário: ${comment}`);
 }
 
-/*
- * Adiciona um evento de clique ao botão de envio para chamar a função submitRating.
- * O botão deve ter o ID 'submit-button'.
- */
-document.getElementById('submit-button').addEventListener('click', submitComment);
+function zeroStars() {
+  stars.forEach((star) => {
+    star.classList.remove("active");
+  });
+}
 
+/**
+ * Adiciona os eventos de clique aos botões do modal.
+ * closeModal() é chamado para fechar o modal.
+ * zeroStars() é chamado para limpar a avaliação anterior.
+ */
+document.getElementById("submit-button").addEventListener("click", () => {
+  closeModal();
+  zeroStars();
+});
