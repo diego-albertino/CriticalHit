@@ -11,7 +11,7 @@ const games = {
     title: "Need For Speed Heat",
     image: "pictures/nfs.png",
     description: "Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.",
-    rating: "★".repeat(num_star), 
+    rating: "★".repeat(num_star),
   },
   "silent-hill-2": {
     title: "Silent Hill 2",
