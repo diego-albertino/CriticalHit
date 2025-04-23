@@ -82,8 +82,11 @@
   color: white; /* Texto branco ao passar o mouse */
 }
 
-.p {
-  white-space: normal;
+.comment-paragraph {
+  width: 976px;
+  overflow-wrap: break-word;
+  word-wrap: break-word; /* Para compatibilidade com navegadores mais antigos */
+  white-space: pre-wrap; /* Para preservar quebras de linha */
 }
 
 .star-commentPost {
