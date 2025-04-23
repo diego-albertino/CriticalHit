@@ -85,3 +85,9 @@
 .p {
   white-space: normal;
 }
+
+.star-commentPost {
+  display: flex;
+  color: #feb954;
+  font-size: 20px;
+}
