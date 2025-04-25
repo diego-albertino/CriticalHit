@@ -6,6 +6,14 @@ O **CriticalHit** é uma plataforma de avaliações de jogos eletrônicos focada
 
 ---
 
+## 🧑‍💻 Colaboradores
+
+FELIPE DE SOUZA MIRANDA
+MAYKON DA SILVA FERREIRA
+DIEGO ALBERTINO DA SILVA RODRIGUES
+
+---
+
 ## 🚀 Começando: Guia de Instalação e Execução
 
 Siga estes passos para configurar e visualizar o projeto em seu ambiente local:
