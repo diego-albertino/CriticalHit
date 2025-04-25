@@ -8,8 +8,8 @@ O **CriticalHit** é uma plataforma de avaliações de jogos eletrônicos focada
 
 ## 🧑‍💻 Colaboradores
 
-FELIPE DE SOUZA MIRANDA
-MAYKON DA SILVA FERREIRA
+FELIPE DE SOUZA MIRANDA,
+MAYKON DA SILVA FERREIRA e 
 DIEGO ALBERTINO DA SILVA RODRIGUES
 
 ---
