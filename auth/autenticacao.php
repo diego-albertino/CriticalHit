@@ -1,8 +1,9 @@
 <?php
+session_start();
 $usuario = $_POST['username'];
 $senha = $_POST['pass'];
 function loginRedir() {
-    header ('Location: ../index.html');
+    header ('Location: ../index.php');
     exit();
 }
 function loginFailed() {
@@ -25,6 +26,8 @@ if ($stmt->num_rows > 0) {
     $stmt->fetch();
 
     if (password_verify($senha, $senha_hash)) {
+        $_SESSION['username'] = $usuario;
+        $_SESSION['pass'] = $senha;
         loginRedir();
     } else {
         loginFailed();

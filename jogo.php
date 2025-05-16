@@ -1,0 +1,118 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Jogo</title>
+    <link rel="icon" href="pictures/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="jogo.css" />
+    <link rel="stylesheet" href="modal.css" />
+  </head>
+  <body>
+    <div id="navbar-container"></div>
+    <!-- Contêiner para a navbar -->
+
+    <div class="container">
+      <div id="game-details">
+        <!-- Os detalhes do jogo serão carregados aqui -->
+      </div>
+
+      <!-- Mini-janela para fazer os comentários -->
+      <form id="modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">×</span>
+          <div class="usuario d-flex align-items-center">
+            <i class="bi bi-person-circle"></i>
+            <p><strong>Usuário</strong></p>
+          </div>
+          <div class="stars" id="star-container">
+            <span data-value="1">★</span>
+            <span data-value="2">★</span>
+            <span data-value="3">★</span>
+            <span data-value="4">★</span>
+            <span data-value="5">★</span>
+          </div>
+          <textarea id="comment" placeholder="Descreva sua experiência (opcional)"></textarea>
+          <button id="submit-button" aria-label="Enviar avaliação" type="submit">ENVIAR</button>
+        </div>
+      </form>
+      <!-- Fim da mini-janela -->
+
+      <!-- Barra de visualização dos comentários -->
+      <div class="d-flex justify-content-center">
+        <div class="mt-2" id="commentPost">
+          <h5 class="text-center"></h5>
+        </div>
+      </div>
+    </div>
+    <div id="footer-container"></div>
+    <script>
+      // Carregar a navbar dinamicamente
+      fetch("navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar-container").innerHTML = data;
+    sessionStorage.setItem("username", "<?php echo $_SESSION['username']; ?>");
+
+    // Manipular os elementos depois que a navbar for carregada
+    const nomeUsuario = sessionStorage.getItem("username");
+
+    const loginLink = document.getElementById("login-link");
+    const loginText = document.getElementById("login-text");
+
+    // Verifique se os elementos existem antes de manipulá-los
+    if (loginLink && loginText) {
+      if (nomeUsuario) {
+        loginText.textContent = nomeUsuario;
+        loginLink.setAttribute("href", "meu_perfil.php");
+      } else {
+        loginText.textContent = "Iniciar sessão";
+        loginLink.setAttribute("href", "login.php");
+      }
+    } else {
+      console.log("Os elementos de login não foram encontrados.");
+    }
+  })
+  .catch((error) => {
+    console.log("Erro ao carregar a navbar: ", error);
+  });
+    </script>
+    <script src="jogo.js"></script>
+    <script src="modal.js"></script>
+    <script src="commentPost.js"></script>
+    <script>
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
+        });
+    </script>
+
+    <script>
+      // Verifica se a sessão do usuário está ativa
+document.addEventListener("DOMContentLoaded", function () {
+
+  
+  const nomeUsuario = sessionStorage.getItem("username"); 
+  
+  const loginLink = document.getElementById("login-link");
+  const loginText = document.getElementById("login-text");
+  
+  if (nomeUsuario) {
+    loginText.textContent = nomeUsuario;
+    loginLink.setAttribute("href", "meu_perfil.php"); 
+  } else {
+
+    loginText.textContent = "Hehehe";
+    loginLink.setAttribute("href", "login.php");
+  }
+});
+</script>
+  </body>
+</html>

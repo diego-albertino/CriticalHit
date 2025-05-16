@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -39,9 +43,15 @@
             </button>
           </form>
 
-          <a class="nav-link input-group" href="login.php" id="login">
-            <span class="me-1"><i class="bi bi-person-fill"></i>Iniciar sessão</span>
-          </a>
+            <?php if (isset($_SESSION['username'])): ?>
+            <a class="nav-link input-group" href="meu_perfil.php" id="perfil">
+              <span class="me-1"><i class="bi bi-person-fill"></i><?php echo $_SESSION['username']; ?></span>
+            </a>
+          <?php else: ?>
+            <a class="nav-link input-group" href="login.php" id="login">
+              <span class="me-1"><i class="bi bi-person-fill"></i>Iniciar sessão</span>
+            </a>
+          <?php endif; ?>
         </div>
       </div>
     </nav>
@@ -54,7 +64,7 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=silent-hill-2">
+                <a class="text-decoration-none" href="jogo.php?game=silent-hill-2">
                   <img src="pictures/silent.png" alt="Silent Hill 2" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Silent Hill 2</h5>
@@ -63,7 +73,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=stardew-valley">
+                <a class="text-decoration-none" href="jogo.php?game=stardew-valley">
                   <img src="pictures/stardew.png" alt="Stardew Valley" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Stardew Valley</h5>
@@ -72,7 +82,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=nfs-heat">
+                <a class="text-decoration-none" href="jogo.php?game=nfs-heat">
                   <img src="pictures/nfs.png" alt="NFS Heat" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>NFS Heat</h5>
@@ -81,7 +91,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=spider-man-2">
+                <a class="text-decoration-none" href="jogo.php?game=spider-man-2">
                   <img src="pictures/spider.png" alt="Spider-Man 2" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Spider-Man 2</h5>
@@ -94,7 +104,7 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=the-last-of-us-2">
+                <a class="text-decoration-none" href="jogo.php?game=the-last-of-us-2">
                   <img src="pictures/us.png" alt="The Last of Us Part II" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>The Last of Us Part II</h5>
@@ -124,7 +134,7 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=grand-theft-auto-vi">
+                <a class="text-decoration-none" href="jogo.php?game=grand-theft-auto-vi">
                   <img src="pictures/gta.png" alt="Grand Theft Auto VI" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Grand Theft Auto VI</h5>
@@ -133,7 +143,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=death-stranding-2">
+                <a class="text-decoration-none" href="jogo.php?game=death-stranding-2">
                   <img src="pictures/death.png" alt="Death Stranding 2" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Death Stranding 2</h5>
@@ -142,7 +152,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=deliver-at-all-costs">
+                <a class="text-decoration-none" href="jogo.php?game=deliver-at-all-costs">
                   <img src="pictures/deliver.png" alt="Deliver At All Costs" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Deliver At All Costs</h5>
@@ -151,7 +161,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=elden-ring-nightreign">
+                <a class="text-decoration-none" href="jogo.php?game=elden-ring-nightreign">
                   <img src="pictures/elden.png" alt="Elden Ring Nightreign" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Elden Ring Nightreign</h5>
@@ -164,7 +174,7 @@
           <div class="carousel-item">
             <div class="row">
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=call-of-duty">
+                <a class="text-decoration-none" href="jogo.php?game=call-of-duty">
                   <img src="pictures/cod.png" alt="Call of Duty" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Call of Duty</h5>
@@ -195,7 +205,7 @@
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=playstation-5">
+                <a class="text-decoration-none" href="jogo.php?game=playstation-5">
                   <img src="pictures/ps5.png" alt="Playstation 5" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Playstation 5</h5>
@@ -204,7 +214,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=xbox-series">
+                <a class="text-decoration-none" href="jogo.php?game=xbox-series">
                   <img src="pictures/xbox.png" alt="Xbox Series" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Xbox Series</h5>
@@ -213,7 +223,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=pc">
+                <a class="text-decoration-none" href="jogo.php?game=pc">
                   <img src="pictures/pc.png" alt="Pc" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>PC</h5>
@@ -222,7 +232,7 @@
                 </a>
               </div>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.html?game=geforce-now">
+                <a class="text-decoration-none" href="jogo.php?game=geforce-now">
                   <img src="pictures/geforce.png" alt="Geforce Now" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Geforce Now</h5>
@@ -234,7 +244,7 @@
             <div class="carousel-item">
               <div class="row">
                 <div class="col-md-3 game-card">
-                  <a class="text-decoration-none" href="jogo.html?game=nintendo">
+                  <a class="text-decoration-none" href="jogo.php?game=nintendo">
                     <img src="pictures/nintendo.png" alt="Nintendo" />
                     <div class="game-info d-flex justify-content-between align-items-center">
                       <h5>Nintendo</h5>
