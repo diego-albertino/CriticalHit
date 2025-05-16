@@ -1,5 +1,6 @@
 <?php
 session_start();
+$username = $_SESSION['username'] ?? '';
 ?>
 
 <!DOCTYPE html>
@@ -54,11 +55,12 @@ session_start();
     <div id="footer-container"></div>
     <script>
       // Carregar a navbar dinamicamente
+      const phpUsername = "<?php echo $username; ?>";
       fetch("navbar.html")
+      
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("navbar-container").innerHTML = data;
-    sessionStorage.setItem("username", "<?php echo $_SESSION['username']; ?>");
 
     // Manipular os elementos depois que a navbar for carregada
     const nomeUsuario = sessionStorage.getItem("username");
@@ -68,8 +70,8 @@ session_start();
 
     // Verifique se os elementos existem antes de manipulá-los
     if (loginLink && loginText) {
-      if (nomeUsuario) {
-        loginText.textContent = nomeUsuario;
+      if (phpUsername !== "") {
+        loginText.textContent = phpUsername;
         loginLink.setAttribute("href", "meu_perfil.php");
       } else {
         loginText.textContent = "Iniciar sessão";
@@ -93,26 +95,5 @@ session_start();
           document.getElementById("footer-container").innerHTML = data;
         });
     </script>
-
-    <script>
-      // Verifica se a sessão do usuário está ativa
-document.addEventListener("DOMContentLoaded", function () {
-
-  
-  const nomeUsuario = sessionStorage.getItem("username"); 
-  
-  const loginLink = document.getElementById("login-link");
-  const loginText = document.getElementById("login-text");
-  
-  if (nomeUsuario) {
-    loginText.textContent = nomeUsuario;
-    loginLink.setAttribute("href", "meu_perfil.php"); 
-  } else {
-
-    loginText.textContent = "Hehehe";
-    loginLink.setAttribute("href", "login.php");
-  }
-});
-</script>
   </body>
 </html>

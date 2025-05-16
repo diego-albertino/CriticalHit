@@ -17,7 +17,7 @@ session_start();
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand navbar-logo d-flex align-items-center" href="index.html">
+        <a class="navbar-brand navbar-logo d-flex align-items-center" href="index.php">
           <img src="pictures/criticalogo.jpg" alt="Logo" class="me-2" id="logo" />
           <span id="critical">critical</span><span id="hit">hit</span>
         </a>
