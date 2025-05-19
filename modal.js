@@ -6,6 +6,7 @@
  */
 const stars = document.querySelectorAll("#star-container span");
 let selectedRating = 0;
+const starValueInput = document.getElementById("rating_value");
 
 /**
  * Adiciona um evento de clique a cada estrela.
@@ -16,7 +17,10 @@ stars.forEach((star) => {
   star.addEventListener("click", () => {
     selectedRating = parseInt(star.getAttribute("data-value")); // Obtém o valor da estrela clicada
     localStorage.setItem("selectedRating", selectedRating); // Armazena no localStorage com a chave "selectedRating"
-    updateStars(selectedRating);
+    if (starValueInput) {
+      starValueInput.value = selectedRating;
+    }
+    updateStars(selectedRating); // Atualiza a aparência das estrelas
   });
 });
 
@@ -52,17 +56,23 @@ function closeModal() {
  * Envia a avaliação e o comentário do usuário.
  * Obtém o comentário do campo de entrada com o ID 'comment' e exibe
  * um alerta com a nota selecionada e o comentário fornecido pelo usuário.
- *
  */
 function submitComment() {
   const comment = document.getElementById("comment").value;
   alert(`Avaliação enviada!\nNota: ${selectedRating}\nComentário: ${comment}`);
 }
 
+/**
+ * Limpa o campo de avaliação, removendo a classe "active" de todas as estrelas.
+ */
 function zeroStars() {
   stars.forEach((star) => {
     star.classList.remove("active");
   });
+  if (starValueInput) {
+    // Adicione esta verificação e a linha abaixo
+    starValueInput.value = 0;
+  }
 }
 
 /**

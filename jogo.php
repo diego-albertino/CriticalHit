@@ -25,7 +25,7 @@ $username = $_SESSION['username'] ?? '';
       </div>
 
       <!-- Mini-janela para fazer os comentários -->
-      <form id="modal" class="modal hidden">
+      <form id="modal" class="modal hidden" action="salvar_comentario.php" method="POST">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
@@ -39,7 +39,13 @@ $username = $_SESSION['username'] ?? '';
             <span data-value="4">★</span>
             <span data-value="5">★</span>
           </div>
-          <textarea id="comment" placeholder="Descreva sua experiência (opcional)"></textarea>
+
+          <input type="hidden" name="game_id" id="game_id" value="1" />
+          <input type="hidden" name="user_id" id="user_id" value="1" />
+          <input type="hidden" name="platform_id" id="platform_id" value="1" />
+          <input type="hidden" name="rating" id="rating_value" value="0" />
+
+          <textarea name="comment" id="comment" placeholder="Descreva sua experiência (opcional)"></textarea>
           <button id="submit-button" aria-label="Enviar avaliação" type="submit">ENVIAR</button>
         </div>
       </form>
