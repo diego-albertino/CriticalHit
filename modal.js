@@ -53,7 +53,6 @@ function closeModal() {
  * Obtém o comentário do campo de entrada com o ID 'comment' e exibe
  * um alerta com a nota selecionada e o comentário fornecido pelo usuário.
  *
- * @function
  */
 function submitComment() {
   const comment = document.getElementById("comment").value;
