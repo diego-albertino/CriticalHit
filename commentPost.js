@@ -16,24 +16,24 @@ form.addEventListener("submit", (event) => {
     .then((response) => response.text()) // Obtém a resposta como texto
     .then((data) => {
       console.log(data); // Exibe a resposta do servidor (o "echo") no console
-      alert(data); // Ou exibe a resposta em um alerta
+      alert(data); // Exibe a resposta do servidor (o "echo") em um alerta
 
       // Se o comentário foi salvo com sucesso, adiciona à interface
       if (data.includes("Comentário salvo com sucesso")) {
-        // Verifica a mensagem de sucesso
         let p = document.createElement("p");
         p.classList = "rounded-2 bg-body-secondary p-3 w-100 mt-4 text-wrap";
-        // Você pode querer buscar o nome do usuário da sessão PHP ou de outra forma
-        // em vez de "Usuário" fixo se a página não for recarregada.
-        // Por enquanto, vamos manter o comportamento anterior para a exibição local.
-        const ratingValue = formData.get("rating"); // Pega o valor do rating do FormData
-        p.innerHTML = `<div class="comment-paragraph"><i class="bi bi-person-circle">&nbsp </i><strong>Usuário: </strong><br> ${textComment.value}<br><span class="star-commentPost">${"★".repeat(ratingValue || 0)}</span></div>`;
+        const ratingValue = formData.get("rating");
+        const commentValue = formData.get("comment");
+        const userNameText = document.querySelector("#modal .usuario p strong")?.textContent || "Usuário";
+
+        p.innerHTML = `<div class="comment-paragraph"><i class="bi bi-person-circle">&nbsp </i><strong>${userNameText}: </strong><br> ${commentValue}<br><span class="star-commentPost">${"★".repeat(ratingValue || 0)}</span></div>`;
         commentPost.appendChild(p);
-        textComment.value = ""; // Limpa o campo de comentário
-        // Não é mais necessário usar localStorage para rating aqui se o form o envia diretamente
-        // localStorage.removeItem("selectedRating");
-        // Limpar as estrelas e fechar o modal pode ser feito aqui ou no modal.js
-        // como já está sendo feito.
+        textComment.value = ""; // Limpa o campo de texto do comentário
+
+        closeModal(); // Fecha o modal
+        zeroStars(); // Limpa as estrelas
+      } else {
+        alert(data); // Exibe a mensagem de erro do PHP
       }
     })
     .catch((error) => {

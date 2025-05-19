@@ -16,7 +16,6 @@ const starValueInput = document.getElementById("rating_value");
 stars.forEach((star) => {
   star.addEventListener("click", () => {
     selectedRating = parseInt(star.getAttribute("data-value")); // Obtém o valor da estrela clicada
-    localStorage.setItem("selectedRating", selectedRating); // Armazena no localStorage com a chave "selectedRating"
     if (starValueInput) {
       starValueInput.value = selectedRating;
     }
@@ -70,17 +69,6 @@ function zeroStars() {
     star.classList.remove("active");
   });
   if (starValueInput) {
-    // Adicione esta verificação e a linha abaixo
     starValueInput.value = 0;
   }
 }
-
-/**
- * Adiciona os eventos de clique aos botões do modal.
- * closeModal() é chamado para fechar o modal.
- * zeroStars() é chamado para limpar a avaliação anterior.
- */
-document.getElementById("submit-button").addEventListener("click", () => {
-  closeModal();
-  zeroStars();
-});
