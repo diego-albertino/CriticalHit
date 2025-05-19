@@ -36,12 +36,20 @@ session_start();
               <a class="nav-link" href="#">Destaques</a>
             </li>
           </ul>
-          <form class="input-group d-flex me-5" id="search">
-            <input class="form-control box-search-input" type="search" placeholder="Buscar" aria-label="Buscar" />
+          <form class="input-group d-flex me-5" id="search" method="GET" action="busca.php">
+            <input 
+              class="form-control box-search-input" 
+              type="search" 
+              name="palavra" 
+              placeholder="Buscar críticas" 
+              aria-label="Buscar" 
+              required 
+            />
             <button class="btn btn-danger" type="submit">
               <i class="bi bi-search"></i>
             </button>
           </form>
+
 
             <?php if (isset($_SESSION['username'])): ?>
             <a class="nav-link input-group" href="meu_perfil.php" id="perfil">
