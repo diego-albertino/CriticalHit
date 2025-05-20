@@ -5,6 +5,13 @@ const commentPost = document.getElementById("commentPost");
 form.addEventListener("submit", (event) => {
   event.preventDefault(); // Impede o envio padrão do formulário
 
+  //Verifica se o usuário está logado
+  if (phpUsername === "") {
+    alert("Você precisa estar logado para comentar.");
+    window.location.href = "login.php";
+    return;
+  }
+
   // Coleta os dados do formulário
   const formData = new FormData(form);
 
@@ -22,11 +29,11 @@ form.addEventListener("submit", (event) => {
       if (data.includes("Comentário salvo com sucesso")) {
         let p = document.createElement("p");
         p.classList = "rounded-2 bg-body-secondary p-3 w-100 mt-4 text-wrap";
-        const ratingValue = formData.get("rating");
-        const commentValue = formData.get("comment");
-        const userNameText = document.querySelector("#modal .usuario p strong")?.textContent || "Usuário";
+        const numero_estrelas = formData.get("rating");
+        const texto_comentario = formData.get("comment");
+        const nome_usuario = phpUsername || "Usuário";
 
-        p.innerHTML = `<div class="comment-paragraph"><i class="bi bi-person-circle">&nbsp </i><strong>${userNameText}: </strong><br> ${commentValue}<br><span class="star-commentPost">${"★".repeat(ratingValue || 0)}</span></div>`;
+        p.innerHTML = `<div class="comment-paragraph"><i class="bi bi-person-circle">&nbsp </i><strong>${nome_usuario}: </strong><br> ${texto_comentario}<br><span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span></div>`;
         commentPost.appendChild(p);
         textComment.value = ""; // Limpa o campo de texto do comentário
 

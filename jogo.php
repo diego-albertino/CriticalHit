@@ -30,7 +30,7 @@ $username = $_SESSION['username'] ?? '';
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
             <i class="bi bi-person-circle"></i>
-            <p><strong>Usuário</strong></p>
+            <p><strong><?php echo $username ? htmlspecialchars($username) : 'Usuário'; ?></strong></p>
           </div>
           <div class="stars" id="star-container">
             <span data-value="1">★</span>
@@ -62,34 +62,33 @@ $username = $_SESSION['username'] ?? '';
     <script>
       // Carregar a navbar dinamicamente
       const phpUsername = "<?php echo $username; ?>";
-      fetch("navbar.html")
-      
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("navbar-container").innerHTML = data;
+      fetch("navbar.html")   
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById("navbar-container").innerHTML = data;
 
-    // Manipular os elementos depois que a navbar for carregada
-    const nomeUsuario = sessionStorage.getItem("username");
+        // Manipular os elementos depois que a navbar for carregada
+        const nomeUsuario = sessionStorage.getItem("username");
 
-    const loginLink = document.getElementById("login-link");
-    const loginText = document.getElementById("login-text");
+        const loginLink = document.getElementById("login-link");
+        const loginText = document.getElementById("login-text");
 
-    // Verifique se os elementos existem antes de manipulá-los
-    if (loginLink && loginText) {
-      if (phpUsername !== "") {
-        loginText.textContent = phpUsername;
-        loginLink.setAttribute("href", "meu_perfil.php");
-      } else {
-        loginText.textContent = "Iniciar sessão";
-        loginLink.setAttribute("href", "login.php");
-      }
-    } else {
-      console.log("Os elementos de login não foram encontrados.");
-    }
-  })
-  .catch((error) => {
-    console.log("Erro ao carregar a navbar: ", error);
-  });
+        // Verifique se os elementos existem antes de manipulá-los
+        if (loginLink && loginText) {
+          if (phpUsername !== "") {
+            loginText.textContent = phpUsername;
+            loginLink.setAttribute("href", "meu_perfil.php");
+          } else {
+            loginText.textContent = "Iniciar sessão";
+            loginLink.setAttribute("href", "login.php");
+          }
+        } else {
+          console.log("Os elementos de login não foram encontrados.");
+        }
+      })
+      .catch((error) => {
+        console.log("Erro ao carregar a navbar: ", error);
+      });
     </script>
     <script src="jogo.js"></script>
     <script src="modal.js"></script>

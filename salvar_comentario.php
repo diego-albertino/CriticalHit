@@ -14,11 +14,6 @@ if ($conn->connect_error) {
 // Inicia a sessão
 session_start();
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
-    exit();
-}
 // Obtém o ID do jogo , ID do usuário e o ID da plataforma do formulário
 $gameId = $_POST['game_id'];
 $userId = $_POST['user_id'];
