@@ -48,3 +48,50 @@ form.addEventListener("submit", (event) => {
       alert("Ocorreu um erro ao enviar seu comentário.");
     });
 });
+
+function carregarComentariosExistentes(gameId) {
+  const commentPostDiv = document.getElementById("commentPost");
+  if (!commentPostDiv) {
+    console.error("Elemento commentPost não encontrado.");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("game_id", gameId);
+
+  fetch("carregar_comentarios.php", {
+    method: "POST",
+    body: formData,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na rede ao carregar comentários: " + response.statusText);
+      }
+      return response.text();
+    })
+    .then((htmlComentarios) => {
+      commentPostDiv.innerHTML = htmlComentarios;
+    })
+    .catch((error) => {
+      console.error("Erro ao carregar comentários:", error);
+      commentPostDiv.innerHTML = '<p class="text-center text-danger">Não foi possível carregar os comentários.</p>';
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Obtenha o gameId
+  // Por enquanto, vou usar os valores dos campos hidden do modal,
+  // mas idealmente, para a página do jogo, esses valores viriam de outra forma
+  // (ex: da URL, ou de dados carregados com os detalhes do jogo).
+  const gameIdInput = document.getElementById("game_id");
+
+  const gameId = gameIdInput ? gameIdInput.value : "1"; // Valor padrão ou de fallback
+
+  if (gameId) {
+    carregarComentariosExistentes(gameId);
+  } else {
+    console.warn("game_id não encontrado para carregar comentários.");
+  }
+
+  // ... seu código existente do DOMContentLoaded, se houver ...
+});

@@ -54,11 +54,15 @@ $username = $_SESSION['username'] ?? '';
       <!-- Barra de visualização dos comentários -->
       <div class="d-flex justify-content-center">
         <div class="mt-2" id="commentPost">
-          <h5 class="text-center"></h5>
+          <h5 class="text-center">
+            <!-- Aqui os comentários serão carregados usando o script -->
+             
+          </h5>
         </div>
       </div>
     </div>
     <div id="footer-container"></div>
+
     <script>
       // Carregar a navbar dinamicamente
       const phpUsername = "<?php echo $username; ?>";
