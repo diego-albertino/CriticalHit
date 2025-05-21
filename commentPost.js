@@ -12,6 +12,12 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
+  // Verifica se o campo de comentário está vazio
+  if (textComment.value.trim() === "") {
+    alert("Por favor, escreva um comentário.");
+    return;
+  }
+
   // Coleta os dados do formulário
   const formData = new FormData(form);
 
@@ -28,7 +34,7 @@ form.addEventListener("submit", (event) => {
       // Se o comentário foi salvo com sucesso, adiciona à interface
       if (data.includes("Comentário salvo com sucesso")) {
         let p = document.createElement("p");
-        p.classList = "rounded-2 bg-body-secondary p-3 w-100 mt-4 text-wrap";
+        p.classList = "rounded-2 bg-body-secondary p-3 mt-4 text-wrap";
         const numero_estrelas = formData.get("rating");
         const texto_comentario = formData.get("comment");
         const nome_usuario = phpUsername || "Usuário";
@@ -85,13 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // (ex: da URL, ou de dados carregados com os detalhes do jogo).
   const gameIdInput = document.getElementById("game_id");
 
-  const gameId = gameIdInput ? gameIdInput.value : "1"; // Valor padrão ou de fallback
+  const gameId = gameIdInput.value;
 
   if (gameId) {
     carregarComentariosExistentes(gameId);
   } else {
     console.warn("game_id não encontrado para carregar comentários.");
   }
-
-  // ... seu código existente do DOMContentLoaded, se houver ...
 });

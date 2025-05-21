@@ -45,7 +45,7 @@ $username = $_SESSION['username'] ?? '';
           <input type="hidden" name="platform_id" id="platform_id" value="1" />
           <input type="hidden" name="rating" id="rating_value" value="0" />
 
-          <textarea name="comment" id="comment" placeholder="Descreva sua experiência (opcional)"></textarea>
+          <textarea name="comment" id="comment" placeholder="Descreva sua experiência"></textarea>
           <button id="submit-button" aria-label="Enviar avaliação" type="submit">ENVIAR</button>
         </div>
       </form>
@@ -53,12 +53,7 @@ $username = $_SESSION['username'] ?? '';
 
       <!-- Barra de visualização dos comentários -->
       <div class="d-flex justify-content-center">
-        <div class="mt-2" id="commentPost">
-          <h5 class="text-center">
-            <!-- Aqui os comentários serão carregados usando o script -->
-             
-          </h5>
-        </div>
+        <div class="mt-2" id="commentPost"></div>
       </div>
     </div>
     <div id="footer-container"></div>
