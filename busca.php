@@ -57,10 +57,10 @@ if ($conn->connect_error) {
                                 <p class="card-text">data: <?= nl2br(htmlspecialchars($linha['data'])) ?></p>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
-                                <a href="/atualizar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger">
+                                <a href="/CriticalHit/atualizar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger">
                                     <i class="bi bi-pencil-square"></i> Atualizar
                                 </a>
-                                <a href="/deletar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Deseja realmente excluir esta crítica?')">
+                                <a href="/CriticalHit/deletar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Deseja realmente excluir esta crítica?')">
                                     <i class="bi bi-trash"></i> Deletar
                                 </a>
                             </div>
