@@ -1,7 +1,65 @@
 <?php
 session_start();
-?>
 
+$client_id = 'llchwugououejhoe70hroapigu7mwh';
+$access_token = '6oqojiph7yeop8bprfxy278y142c2y';
+$url = 'https://api.igdb.com/v4/covers';
+
+$body = "fields url,game; limit 16;";
+
+$ch = curl_init($url);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_HTTPHEADER, [
+    "Client-ID: $client_id",
+    "Authorization: Bearer $access_token",
+    "Accept: application/json"
+]);
+
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+
+$response = curl_exec($ch);
+
+$images = [];
+if (!curl_errno($ch)) {
+    $images = json_decode($response, true);
+}
+
+curl_close($ch);
+
+// Busca os nomes dos jogos usando os IDs retornados
+$gameNames = [];
+$gameIds = [];
+foreach ($images as $img) {
+    if (isset($img['game'])) {
+        $gameIds[] = $img['game'];
+    }
+}
+$gameIds = array_unique($gameIds);
+
+if (!empty($gameIds)) {
+    $gamesUrl = 'https://api.igdb.com/v4/games';
+    $gamesBody = 'where id = ('.implode(',', $gameIds).'); fields id, name;';
+    $chGames = curl_init($gamesUrl);
+    curl_setopt($chGames, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($chGames, CURLOPT_HTTPHEADER, [
+        "Client-ID: $client_id",
+        "Authorization: Bearer $access_token",
+        "Accept: application/json"
+    ]);
+    curl_setopt($chGames, CURLOPT_POST, true);
+    curl_setopt($chGames, CURLOPT_POSTFIELDS, $gamesBody);
+    $gamesResponse = curl_exec($chGames);
+    if (!curl_errno($chGames)) {
+        $games = json_decode($gamesResponse, true);
+        foreach ($games as $game) {
+            $gameNames[$game['id']] = $game['name'];
+        }
+    }
+    curl_close($chGames);
+}
+?>
 <!DOCTYPE html>
 <html lang="pt">
   <head>
@@ -49,9 +107,7 @@ session_start();
               <i class="bi bi-search"></i>
             </button>
           </form>
-
-
-            <?php if (isset($_SESSION['username'])): ?>
+          <?php if (isset($_SESSION['username'])): ?>
             <a class="nav-link input-group" href="meu_perfil.php" id="perfil">
               <span class="me-1"><i class="bi bi-person-fill"></i><?php echo $_SESSION['username']; ?></span>
             </a>
@@ -71,55 +127,40 @@ session_start();
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
+              <?php foreach (array_slice($images, 0, 4) as $img):
+                $url = isset($img['url']) ? str_replace('t_thumb', 't_cover_big', $img['url']) : '';
+                $fullUrl = $url ? 'https:' . $url : '';
+                $gameName = isset($gameNames[$img['game']]) ? $gameNames[$img['game']] : 'Nome desconhecido';
+              ?>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=silent-hill-2">
-                  <img src="pictures/silent.png" alt="Silent Hill 2" />
+                <a class="text-decoration-none" href="#">
+                  <img src="<?php echo htmlspecialchars($fullUrl); ?>" alt="Jogo da API" />
                   <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Silent Hill 2</h5>
-                    <div class="stars">★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=stardew-valley">
-                  <img src="pictures/stardew.png" alt="Stardew Valley" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Stardew Valley</h5>
+                    <h5><?php echo htmlspecialchars($gameName); ?></h5>
                     <div class="stars">★★★★★</div>
                   </div>
                 </a>
               </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=nfs-heat">
-                  <img src="pictures/nfs.png" alt="NFS Heat" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>NFS Heat</h5>
-                    <div class="stars">★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=spider-man-2">
-                  <img src="pictures/spider.png" alt="Spider-Man 2" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Spider-Man 2</h5>
-                    <div class="stars">★★★</div>
-                  </div>
-                </a>
-              </div>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
+              <?php foreach (array_slice($images, 4, 4) as $img):
+                $url = isset($img['url']) ? str_replace('t_thumb', 't_cover_big', $img['url']) : '';
+                $fullUrl = $url ? 'https:' . $url : '';
+                $gameName = isset($gameNames[$img['game']]) ? $gameNames[$img['game']] : 'Nome desconhecido';
+              ?>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=the-last-of-us-2">
-                  <img src="pictures/us.png" alt="The Last of Us Part II" />
+                <a class="text-decoration-none" href="#">
+                  <img src="<?php echo htmlspecialchars($fullUrl); ?>" alt="Jogo da API" />
                   <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>The Last of Us Part II</h5>
-                    <div class="stars">★★★★</div>
+                    <h5><?php echo htmlspecialchars($gameName); ?></h5>
+                    <div class="stars">★★★★★</div>
                   </div>
                 </a>
               </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
@@ -137,75 +178,59 @@ session_start();
     <div class="container mt-4">
       <h4 class="d-flex justify-content-start">LANÇAMENTOS</h4>
       <h3 class="d-flex justify-content-start"><strong>Confira</strong>­ novos títulos</h3>
-      <div id="1gameCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="gameCarouse2" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
+              <?php foreach (array_slice($images, 8, 4) as $img):
+                $url = isset($img['url']) ? str_replace('t_thumb', 't_cover_big', $img['url']) : '';
+                $fullUrl = $url ? 'https:' . $url : '';
+                $gameName = isset($gameNames[$img['game']]) ? $gameNames[$img['game']] : 'Nome desconhecido';
+              ?>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=grand-theft-auto-vi">
-                  <img src="pictures/gta.png" alt="Grand Theft Auto VI" />
+                <a class="text-decoration-none" href="#">
+                  <img src="<?php echo htmlspecialchars($fullUrl); ?>" alt="Jogo da API" />
                   <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Grand Theft Auto VI</h5>
+                    <h5><?php echo htmlspecialchars($gameName); ?></h5>
                     <div class="stars">★★★★★</div>
                   </div>
                 </a>
               </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=death-stranding-2">
-                  <img src="pictures/death.png" alt="Death Stranding 2" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Death Stranding 2</h5>
-                    <div class="stars">★★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=deliver-at-all-costs">
-                  <img src="pictures/deliver.png" alt="Deliver At All Costs" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Deliver At All Costs</h5>
-                    <div class="stars">★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=elden-ring-nightreign">
-                  <img src="pictures/elden.png" alt="Elden Ring Nightreign" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Elden Ring Nightreign</h5>
-                    <div class="stars">★★★★</div>
-                  </div>
-                </a>
-              </div>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="carousel-item">
             <div class="row">
+              <?php foreach (array_slice($images, 12, 4) as $img):
+                $url = isset($img['url']) ? str_replace('t_thumb', 't_cover_big', $img['url']) : '';
+                $fullUrl = $url ? 'https:' . $url : '';
+                $gameName = isset($gameNames[$img['game']]) ? $gameNames[$img['game']] : 'Nome desconhecido';
+              ?>
               <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=call-of-duty">
-                  <img src="pictures/cod.png" alt="Call of Duty" />
+                <a class="text-decoration-none" href="#">
+                  <img src="<?php echo htmlspecialchars($fullUrl); ?>" alt="Jogo da API" />
                   <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Call of Duty</h5>
-                    <div class="stars">★★</div>
+                    <h5><?php echo htmlspecialchars($gameName); ?></h5>
+                    <div class="stars">★★★★★</div>
                   </div>
                 </a>
               </div>
+              <?php endforeach; ?>
             </div>
           </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#1gameCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarouse2" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#1gameCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarouse2" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
 
-    <div class="container mt-4">
+<div class="container mt-4">
       <h4 class="d-flex justify-content-start">PLATAFORMAS</h4>
       <h3 class="d-flex justify-content-start"><strong>Sua</strong>­ plataforma favorita aqui</h3>
       <div id="2gameCarousel" class="carousel slide" data-bs-ride="carousel">

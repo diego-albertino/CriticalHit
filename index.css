@@ -76,6 +76,7 @@ body {
   color: #6f6f6f;
 }
 
+
 h4 {
   font-size: 18px;
   line-height: 22px;
@@ -129,7 +130,9 @@ h3 {
   text-align: center;
 }
 .game-card img {
-  width: 100%;
+  width: 306px;
+  height: 161px;
+  object-fit: cover;
   border-radius: 10px;
 }
 
