@@ -94,3 +94,11 @@
   color: #feb954;
   font-size: 20px;
 }
+
+#filter-button {
+  margin-left: 837px; /* Espaçamento à direita do botão */
+  margin-top: 20px; /* Espaçamento acima do botão */
+  background-color: #fe5655; /* Fundo vermelho */
+  color: white; /* Texto branco */
+  border: none; /* Sem borda */
+}

@@ -76,6 +76,17 @@ function loadGameDetails() {
     <div class="comment-container">
         <button type="button" class="btn btn-comentar btn-lg" onclick="OpenModal()">Comentar</button>
     </div>
+    <div class="d-flex justify-content-end dropdown">
+      <button id="filter-button" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-funnel"></i> Ordenar por
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#" id="sort-newest">Mais recentes</a></li>
+        <li><a class="dropdown-item" href="#" id="sort-oldest">Menos recentes</a></li>
+        <li><a class="dropdown-item" href="#" id="sort-best">Melhores avaliações</a></li>
+        <li><a class="dropdown-item" href="#" id="sort-worst">Piores avaliações</a></li>
+      </ul>
+    </div>
     `;
   } else {
     // Caso o jogo não seja encontrado

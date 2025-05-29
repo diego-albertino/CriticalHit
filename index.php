@@ -2,7 +2,7 @@
 session_start();
 
 $client_id = 'llchwugououejhoe70hroapigu7mwh';
-$access_token = '6oqojiph7yeop8bprfxy278y142c2y';
+$access_token = 'wj9ka9jk8459rma6tuy408huijmiem';
 $url = 'https://api.igdb.com/v4/covers';
 
 $body = "fields url,game; limit 16;";
