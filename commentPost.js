@@ -37,12 +37,16 @@ form.addEventListener("submit", (event) => {
       // Se o comentário foi salvo com sucesso, adiciona à interface
       if (data.includes("Comentário salvo com sucesso")) {
         let p = document.createElement("p");
-        p.classList = "rounded-2 bg-body-secondary p-3 mt-4 text-wrap";
-        const numero_estrelas = formData.get("rating");
-        const texto_comentario = formData.get("comment");
-        const nome_usuario = phpUsername || "Usuário";
+        p.className = "comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap";
 
-        p.innerHTML = `<div class="comment-paragraph"><i class="bi bi-person-circle">&nbsp </i><strong>${nome_usuario}: </strong><br> ${texto_comentario}<br><span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span></div>`;
+        const numero_estrelas = formData.get("rating");
+        const texto_comentario_original = formData.get("comment");
+        const texto_comentario_formatado = texto_comentario_original.replace(/\n/g, "<br>");
+        const nome_usuario = phpUsername || "Usuário"; // phpUsername deve estar disponível globalmente
+
+        // Montar o HTML interno do <p>
+        p.innerHTML = `<i class="bi bi-person-circle">&nbsp;</i><strong>${nome_usuario}: </strong><br>${texto_comentario_formatado}<br><span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span>`;
+
         commentPost.appendChild(p);
         textComment.value = ""; // Limpa o campo de texto do comentário
 
