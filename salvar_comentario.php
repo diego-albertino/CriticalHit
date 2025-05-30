@@ -42,5 +42,4 @@ $comment = $_POST['comment'];
 
     // Fecha a declaração
     $stmt->close();
-
 ?>

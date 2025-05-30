@@ -1,76 +1,46 @@
-var num_star = 5; // Variável para definir o número de estrelas
-
+// variavel para armazenar os dados dos jogos
 const games = {
-  "stardew-valley": {
-    title: "Stardew Valley",
-    image: "pictures/stardew.png",
-    description: "Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida. Será que você vai aprender a viver da terra, a transformar esse matagal em um próspero lar?",
-    rating: "★".repeat(num_star), // repeat repete a string "★" de acordo com o valor de num_star
-  },
-  "nfs-heat": {
-    title: "Need For Speed Heat",
-    image: "pictures/nfs.png",
-    description: "Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.",
-    rating: "★".repeat(num_star),
-  },
-  "silent-hill-2": {
-    title: "Silent Hill 2",
-    image: "pictures/silent.png",
-    description: "Um clássico do terror psicológico.",
-    rating: "★".repeat(num_star),
-  },
-  "spider-man-2": {
-    title: "Spider-Man 2",
-    image: "pictures/spider.png",
-    description: "Aventura épica com o Homem-Aranha.",
-    rating: "★".repeat(num_star),
-  },
-
-  "elden-ring-nightreign": {
-    title: "Elden Ring Nightreign",
-    image: "pictures/elden.png",
-    description: "Uma jornada épica em um mundo aberto.",
-    rating: "★".repeat(num_star),
-  },
-  "death-stranding-2": {
-    title: "Death Stranding 2",
-    image: "pictures/death.png",
-    description: "Uma experiência única de entrega e conexão.",
-    rating: "★".repeat(num_star),
-  },
-  "call-of-duty": {
-    title: "Call of Duty",
-    image: "pictures/cod.png",
-    description: "Um dos maiores jogos de tiro em primeira pessoa.",
-    rating: "★".repeat(num_star),
-  },
-  "deliver-at-all-costs": {
-    title: "Deliver At All Costs",
-    image: "pictures/deliver.png",
-    description: "Um jogo de entrega em um mundo pós-apocalíptico.",
-    rating: "★".repeat(num_star),
-  },
+  game_id: "",
+  title: "",
+  image: "",
+  description: "",
+  rating: "",
 };
+
+/**
+ * Busca os detalhes do jogo a partir do slug na URL e faz uma requisição
+ * para obter os dados do jogo.
+ */
+function fetchGameDetails() {
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get("game"); // Recebe o slug do jogo através do parâmetro 'game' da URL
+
+  // Acessa o arquivo PHP que faz a requisição ao banco de dados
+  fetch(`pagina_jogo.php?slug=${encodeURIComponent(slug)}`)
+    .then((response) => response.json())
+    .then((data) => {
+      games.game_id = data.id;
+      games.title = data.nome;
+      games.image = data.url_img;
+      games.description = data.descricao;
+      games.rating = data.nota;
+      loadGameDetails();
+    })
+    .catch((error) => console.error(error));
+}
 
 // Função para carregar os detalhes do jogo
 function loadGameDetails() {
-  // Obter o parâmetro da URL
-  const params = new URLSearchParams(window.location.search);
-  const gameKey = params.get("game");
+  const gameDetails = document.getElementById("game-details");
 
-  // Verificar se o jogo existe nos dados
-  if (games[gameKey]) {
-    const game = games[gameKey];
-    const gameDetails = document.getElementById("game-details");
-
-    // Renderizar os detalhes do jogo
-    gameDetails.innerHTML = `
+  // Renderizar os detalhes do jogo
+  gameDetails.innerHTML = `
     <div class="game-container">
-        <img src="${game.image}" alt="${game.title}" class="game-image" />
+        <img src="${games.image}" alt="${games.title}" class="game-image" />
         <div class="game-info">
-            <h1 class="game-title">${game.title}</h1>
-            <p class="game-description">${game.description}</p>
-            <div class="rating">${game.rating}</div>
+            <h1 class="game-title">${games.title}</h1>
+            <p class="game-description">${games.description}</p>
+            <div class="rating">${"★".repeat(games.rating)}</div>
         </div>
     </div>
     <div class="comment-container">
@@ -88,13 +58,7 @@ function loadGameDetails() {
       </ul>
     </div>
     `;
-  } else {
-    // Caso o jogo não seja encontrado
-    document.getElementById("game-details").innerHTML = `
-        <h2>Jogo não encontrado</h2>
-      `;
-  }
 }
 
 // Chamar a função ao carregar a página
-window.onload = loadGameDetails;
+window.onload = fetchGameDetails;

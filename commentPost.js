@@ -29,7 +29,10 @@ form.addEventListener("submit", (event) => {
     .then((response) => response.text()) // Obtém a resposta como texto
     .then((data) => {
       console.log(data); // Exibe a resposta do servidor (o "echo") no console
-      alert(data); // Exibe a resposta do servidor (o "echo") em um alerta
+      if (data.includes("Erro ao salvar o comentário: ")) {
+        alert(data); // Exibe a mensagem de erro do PHP
+        return; // Interrompe a execução se houver erro
+      }
 
       // Se o comentário foi salvo com sucesso, adiciona à interface
       if (data.includes("Comentário salvo com sucesso")) {

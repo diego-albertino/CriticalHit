@@ -57,4 +57,6 @@ if ($result->num_rows > 0) {
  else {
     echo "Nenhum comentário encontrado.";
 }
+
+$conn->close();
 ?>

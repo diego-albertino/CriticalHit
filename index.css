@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Rambla:wght@400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rambla:wght@400&display=swap");
 * {
-    font-family: 'Rambla';
+  font-family: "Rambla";
 }
 
 body {
@@ -76,7 +76,6 @@ body {
   color: #6f6f6f;
 }
 
-
 h4 {
   font-size: 18px;
   line-height: 22px;
@@ -131,7 +130,7 @@ h3 {
 }
 .game-card img {
   width: 306px;
-  height: 161px;
+  height: 424px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -153,4 +152,17 @@ h3 {
   font-size: 1.5rem; /* Ajusta o tamanho das estrelas */
   padding-top: 10px;
   color: #ffd700; /* Cor dourada para as estrelas */
+}
+
+.game-card .game-info h5 {
+  flex-grow: 1; /* Permite que o título (h5) ocupe o espaço disponível à esquerda. */
+  margin-right: 12px; /* Adiciona um pequeno espaçamento entre o nome e as estrelas. */
+  overflow-wrap: break-word; /* Permite quebras de linha para jogo com nome longo. */
+  word-wrap: break-word; /* Para compatibilidade com navegadores mais antigos */
+  text-align: left; /* Garante que o texto do título, mesmo multi-linha, alinhe à esquerda. */
+}
+
+.game-card .game-info .stars {
+  flex-shrink: 0; /* Impede que a div das estrelas seja comprimida pelo nome longo. */
+  white-space: nowrap; /* Garante que as estrelas permaneçam em uma única linha. */
 }
