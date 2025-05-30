@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/05/2025 às 14:18
+-- Tempo de geração: 30/05/2025 às 14:31
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,7 +42,11 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`, `id_usuario`, `id_plataforma`) VALUES
-(3, 'Não tõ bom', '2025-05-26', '3', 1, 1, 1);
+(1, 'Não tão bom assim', '2025-05-26', '3', 3, 3, 1),
+(2, 'Muito bom gostei', '2025-05-26', '4', 1, 2, 3),
+(3, 'Poderia ser melhor', '2025-05-26', '2', 4, 4, 5),
+(4, 'Amei mimosa', '2025-05-26', '5', 2, 3, 6),
+(5, 'adorei amores, tudo de bom, arrasou', '2025-05-26', '5', 5, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -85,7 +89,12 @@ CREATE TABLE `plataforma` (
 --
 
 INSERT INTO `plataforma` (`id`, `nome`) VALUES
-(1, 'Steam');
+(1, 'Steam'),
+(2, 'Playstation 5'),
+(3, 'Xbox Series'),
+(4, 'PC'),
+(5, 'Geforce Now'),
+(6, 'Nintendo Switch ');
 
 -- --------------------------------------------------------
 
@@ -149,7 +158,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
