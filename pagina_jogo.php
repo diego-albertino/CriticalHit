@@ -17,7 +17,7 @@ $slug = isset($_GET['slug']) ? $_GET['slug'] : '';
 
 // Consulta para obter os dados do jogo com base no slug
 $stmt = $conn->prepare(
-    "SELECT j.id, j.nome, j.descricao, j.url_img, j.descricao, j.nota
+    "SELECT j.id, j.nome, j.descricao, j.url_img, j.descricao, j.nota, j.plataforma
      FROM jogo j
      WHERE j.slug = ?"
 );

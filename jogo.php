@@ -41,10 +41,10 @@ $username = $_SESSION['username'] ?? '';
             <span data-value="5">★</span>
           </div>
 
-          <input type="hidden" name="game_id" id="game_id" value="1" />
+          <input type="hidden" name="game_id" id="game_id" value="" />
           <input type="hidden" name="user_id" id="user_id" value="1" />
-          <input type="hidden" name="platform_id" id="platform_id" value="1" />
-          <input type="hidden" name="rating" id="rating_value" value="0" />
+          <input type="hidden" name="platform_id" id="platform_id" value="" />
+          <input type="hidden" name="rating" id="rating_value" value="" />
 
           <textarea name="comment" id="comment" placeholder="Descreva sua experiência"></textarea>
           <button id="submit-button" aria-label="Enviar avaliação" type="submit">ENVIAR</button>

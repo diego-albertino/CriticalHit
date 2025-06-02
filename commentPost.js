@@ -90,19 +90,3 @@ function carregarComentariosExistentes(gameId) {
       commentPostDiv.innerHTML = '<p class="text-center text-danger">Não foi possível carregar os comentários.</p>';
     });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Obtenha o gameId
-  // Por enquanto, vou usar os valores dos campos hidden do modal,
-  // mas idealmente, para a página do jogo, esses valores viriam de outra forma
-  // (ex: da URL, ou de dados carregados com os detalhes do jogo).
-  const gameIdInput = document.getElementById("game_id");
-
-  const gameId = gameIdInput.value;
-
-  if (gameId) {
-    carregarComentariosExistentes(gameId);
-  } else {
-    console.warn("game_id não encontrado para carregar comentários.");
-  }
-});
