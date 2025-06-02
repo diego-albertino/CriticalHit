@@ -62,7 +62,7 @@ form.addEventListener("submit", (event) => {
     });
 });
 
-function carregarComentariosExistentes(gameId) {
+function carregarComentariosExistentes(gameId, Sort = "newest") {
   const commentPostDiv = document.getElementById("commentPost");
   if (!commentPostDiv) {
     console.error("Elemento commentPost não encontrado.");
@@ -71,6 +71,7 @@ function carregarComentariosExistentes(gameId) {
 
   const formData = new FormData();
   formData.append("game_id", gameId);
+  formData.append("sort", Sort);
 
   fetch("carregar_comentarios.php", {
     method: "POST",

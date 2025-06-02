@@ -15,8 +15,27 @@ if ($conn->connect_error) {
 // Inicia a sessão
 session_start();
 
-// Obtém o ID do jogo
+// Obtém o ID do jogo e tipo de ordenação
 $gameId = $_POST['game_id'];
+$Sort = $_POST['sort'];
+
+$OrderBy = "ORDER BY c.data DESC";
+
+// Definição da ordenação
+switch ($Sort) {
+    case 'newest':
+        $OrderBy = "ORDER BY c.data DESC";
+        break;
+    case 'oldest':
+        $OrderBy = "ORDER BY c.data ASC";
+        break;
+    case 'best':
+        $OrderBy = "ORDER BY c.nota_avaliacao DESC, c.data DESC"; // Desempate pela data
+        break;
+    case 'worst':
+        $OrderBy = "ORDER BY c.nota_avaliacao ASC, c.data DESC"; // Desempate pela data
+        break;
+}
 
 // Prepara a consulta SQL para obter os comentários
 $stmt = $conn->prepare(
@@ -24,7 +43,7 @@ $stmt = $conn->prepare(
      FROM comentario c
      JOIN usuario u ON c.id_usuario = u.id
      WHERE c.id_jogo = ? 
-     ORDER BY c.data DESC" // Ordem os comentários pela data mais recente
+     $OrderBy"
 );
 
 $stmt->bind_param("i", $gameId);

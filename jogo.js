@@ -76,7 +76,29 @@ function loadGameDetails() {
       </ul>
     </div>
     `;
+  OrdenarPor();
 }
 
-// Chamar a função ao carregar a página
+// Função para selecionar a forma de ordenação dos comentários
+function OrdenarPor() {
+  const sortOptions = [
+    { id: "sort-newest", order: "newest" },
+    { id: "sort-oldest", order: "oldest" },
+    { id: "sort-best", order: "best" },
+    { id: "sort-worst", order: "worst" },
+  ];
+
+  sortOptions.forEach(({ id, order }) => {
+    const btn = document.getElementById(id);
+    if (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (typeof carregarComentariosExistentes === "function") {
+          carregarComentariosExistentes(games.game_id, order);
+        }
+      });
+    }
+  });
+}
+
 window.onload = fetchGameDetails;
