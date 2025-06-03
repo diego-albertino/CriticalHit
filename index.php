@@ -26,6 +26,17 @@ if ($result && $result->num_rows > 0) {
     $games[] = $row;
   }
 }
+
+// Buscar plataformas do banco
+$sql = "SELECT * FROM plataforma ORDER BY id DESC"; 
+$result = $conn->query($sql);
+$plataformas = [];
+if ($result && $result->num_rows > 0) {
+  while ($row = $result->fetch_assoc()) {
+    $plataformas[] = $row;
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -52,15 +63,15 @@ if ($result && $result->num_rows > 0) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Plataformas</a>
+             <li class="nav-item">
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lançamentos</a>
+              <a class="nav-link" href="#gameCarousel">Destaques</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Destaques</a>
-            </li>
+              <a class="nav-link" href="#gameCarouse2">Plataformas</a>
+            </li>         
           </ul>
           <form class="input-group d-flex me-5" id="search" method="GET" action="busca.php">
             <input 
@@ -89,7 +100,6 @@ if ($result && $result->num_rows > 0) {
         </div>
       </div>
     </nav>
-
     <div class="container mt-4">
       <h4 class="d-flex justify-content-start">DESTAQUES</h4>
       <h3 class="d-flex justify-content-start"><strong>Avaliações</strong>­ dos melhores críticos</h3>
@@ -130,11 +140,10 @@ if ($result && $result->num_rows > 0) {
         </button>
       </div>
     </div>
-
     <div class="container mt-4">
       <h4 class="d-flex justify-content-start">LANÇAMENTOS</h4>
       <h3 class="d-flex justify-content-start"><strong>Confira</strong>­ novos títulos</h3>
-      <div id="1gameCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="1gameCarouse3" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="row">
@@ -191,11 +200,11 @@ if ($result && $result->num_rows > 0) {
           </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#1gameCarousel" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#1gameCarouse3" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#1gameCarousel" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#1gameCarouse3" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
@@ -205,71 +214,43 @@ if ($result && $result->num_rows > 0) {
     <div class="container mt-4">
       <h4 class="d-flex justify-content-start">PLATAFORMAS</h4>
       <h3 class="d-flex justify-content-start"><strong>Sua</strong>­ plataforma favorita aqui</h3>
-      <div id="2gameCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div id="gameCarouse2" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="row">
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=playstation-5">
-                  <img src="assets/pictures/ps5.png" alt="Playstation 5" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Playstation 5</h5>
-                    <div class="stars">★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=xbox-series">
-                  <img src="assets/pictures/xbox.png" alt="Xbox Series" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Xbox Series</h5>
-                    <div class="stars">★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=pc">
-                  <img src="assets/pictures/pc.png" alt="Pc" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>PC</h5>
-                    <div class="stars">★★★★★</div>
-                  </div>
-                </a>
-              </div>
-              <div class="col-md-3 game-card">
-                <a class="text-decoration-none" href="jogo.php?game=geforce-now">
-                  <img src="assets/pictures/geforce.png" alt="Geforce Now" />
-                  <div class="game-info d-flex justify-content-between align-items-center">
-                    <h5>Geforce Now</h5>
-                    <div class="stars">★★★★★</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="carousel-item">
+          <?php
+          $chunked = array_chunk($plataformas, 4); // 4 jogos por slide
+          foreach ($chunked as $i => $plataformaGroup): ?>
+            <div class="carousel-item <?php if ($i == 0) echo 'active'; ?>">
               <div class="row">
-                <div class="col-md-3 game-card">
-                  <a class="text-decoration-none" href="jogo.php?game=nintendo">
-                    <img src="assets/pictures/nintendo.png" alt="Nintendo" />
-                    <div class="game-info d-flex justify-content-between align-items-center">
-                      <h5>Nintendo</h5>
-                      <div class="stars">★★★</div>
-                    </div>
-                  </a>
-                </div>
+                <?php foreach ($plataformaGroup as $plataforma): ?>
+                  <div class="col-md-3 game-card">
+                    <a class="text-decoration-none">
+                      <img src="<?php echo htmlspecialchars($plataforma['url_img']); ?>" alt="<?php echo htmlspecialchars($plataforma['nome']); ?>" />
+                      <div class="game-info d-flex justify-content-between align-items-center">
+                        <h5><?php echo htmlspecialchars($plataforma['nome']); ?></h5>
+                        <div class="stars">
+                          <?php
+                          $stars = intval($plataforma['nota']); 
+                          echo str_repeat('★', $stars);
+                          ?>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                <?php endforeach; ?>
               </div>
             </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#2gameCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#2gameCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <?php endforeach; ?>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#gameCarouse2" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#gameCarouse2" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
+    </div>
     </div>
     <div id="footer-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
