@@ -90,23 +90,24 @@ INSERT INTO `jogo` (`id`, `nome`, `url_img`, `descricao`, `nota`, `slug`, `plata
 --
 -- Estrutura para tabela `plataforma`
 --
-
 CREATE TABLE `plataforma` (
   `id` int(5) NOT NULL,
-  `nome` varchar(20) NOT NULL
+  `nome` varchar(20) NOT NULL,
+  `url_img` varchar(255) NOT NULL,
+  `nota` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `plataforma`
 --
 
-INSERT INTO `plataforma` (`id`, `nome`) VALUES
-(1, 'Steam'),
-(2, 'Playstation 5'),
-(3, 'Xbox Series'),
-(4, 'PC'),
-(5, 'Geforce Now'),
-(6, 'Nintendo Switch ');
+INSERT INTO `plataforma` (`id`, `nome`, `url_img`, `nota`) VALUES
+(1, 'Steam', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png', 5),
+(2, 'Playstation 5', 'https://logos-world.net/wp-content/uploads/2023/08/Playstation-5-Symbol.png', 3),
+(3, 'Xbox Series', 'https://images.seeklogo.com/logo-png/37/2/xbox-series-x-logo-png_seeklogo-370652.png', 4),
+(4, 'PC', 'https://cdn.dribbble.com/userupload/12768721/file/original-afff28bc9d644b90debc8cdc0aa80fb8.jpg', 5),
+(5, 'Geforce Now', 'https://freepnglogo.com/images/all_img/nvidia-logo-0066.png', 5),
+(6, 'Nintendo Switch ', 'https://images.seeklogo.com/logo-png/29/2/nintendo-switch-logo-png_seeklogo-298865.png', 4);
 
 -- --------------------------------------------------------
 
