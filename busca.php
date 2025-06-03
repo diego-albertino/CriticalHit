@@ -19,12 +19,12 @@ if ($conn->connect_error) {
     <title>Busca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body class="p-4">
     <div class="container">
         <div class="logo mb-3">
-            <img src="pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+            <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
         </div>
         <form method="get" class="mb-4">
             <div class="input-group">
@@ -57,10 +57,10 @@ if ($conn->connect_error) {
                                 <p class="card-text">data: <?= nl2br(htmlspecialchars($linha['data'])) ?></p>
                             </div>
                             <div class="card-footer d-flex justify-content-between">
-                                <a href="/CriticalHit/atualizar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger">
+                                <a href="src/actions/atualizar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger">
                                     <i class="bi bi-pencil-square"></i> Atualizar
                                 </a>
-                                <a href="/CriticalHit/deletar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Deseja realmente excluir esta crítica?')">
+                                <a href="src/actions/deletar.php?id_com=<?= $linha['id_com'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Deseja realmente excluir esta crítica?')">
                                     <i class="bi bi-trash"></i> Deletar
                                 </a>
                             </div>

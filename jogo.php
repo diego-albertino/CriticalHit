@@ -9,11 +9,11 @@ $username = $_SESSION['username'] ?? '';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Jogo</title>
-    <link rel="icon" href="pictures/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="assets/pictures/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="jogo.css" />
-    <link rel="stylesheet" href="modal.css" />
+    <link rel="stylesheet" href="assets/css/jogo.css" />
+    <link rel="stylesheet" href="assets/css/modal.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
@@ -26,7 +26,7 @@ $username = $_SESSION['username'] ?? '';
       </div>
 
       <!-- Mini-janela para fazer os comentários -->
-      <form id="modal" class="modal hidden" action="salvar_comentario.php" method="POST">
+      <form id="modal" class="modal hidden" action="src/actions/salvar_comentario.php" method="POST">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
@@ -62,7 +62,7 @@ $username = $_SESSION['username'] ?? '';
     <script>
       // Carregar a navbar dinamicamente
       const phpUsername = "<?php echo $username; ?>";
-      fetch("navbar.html")   
+      fetch("src/templates/navbar.html")   
       .then((response) => response.text())
       .then((data) => {
         document.getElementById("navbar-container").innerHTML = data;
@@ -90,11 +90,11 @@ $username = $_SESSION['username'] ?? '';
         console.log("Erro ao carregar a navbar: ", error);
       });
     </script>
-    <script src="jogo.js"></script>
-    <script src="modal.js"></script>
-    <script src="commentPost.js"></script>
+    <script src="scripts/jogo.js"></script>
+    <script src="scripts/modal.js"></script>
+    <script src="scripts/commentPost.js"></script>
     <script>
-      fetch("footer.html")
+      fetch("src/templates/footer.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer-container").innerHTML = data;

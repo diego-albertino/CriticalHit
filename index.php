@@ -34,17 +34,17 @@ if ($result && $result->num_rows > 0) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CriticalHit - Seu portal Nº1 de Avaliações de Jogos</title>
-    <link rel="icon" href="pictures/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="assets/pictures/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand navbar-logo d-flex align-items-center" href="index.php">
-          <img src="pictures/criticalogo.jpg" alt="Logo" class="me-2" id="logo" />
+          <img src="assets/pictures/criticalogo.jpg" alt="Logo" class="me-2" id="logo" />
           <span id="critical">critical</span><span id="hit">hit</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,7 +140,7 @@ if ($result && $result->num_rows > 0) {
             <div class="row">
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=grand-theft-auto-vi">
-                  <img src="pictures/gta.png" alt="Grand Theft Auto VI" />
+                  <img src="assets/pictures/gta.png" alt="Grand Theft Auto VI" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Grand Theft Auto VI</h5>
                     <div class="stars">★★★★★</div>
@@ -149,7 +149,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=death-stranding-2">
-                  <img src="pictures/death.png" alt="Death Stranding 2" />
+                  <img src="assets/pictures/death.png" alt="Death Stranding 2" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Death Stranding 2</h5>
                     <div class="stars">★★★★★</div>
@@ -158,7 +158,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=deliver-at-all-costs">
-                  <img src="pictures/deliver.png" alt="Deliver At All Costs" />
+                  <img src="assets/pictures/deliver.png" alt="Deliver At All Costs" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Deliver At All Costs</h5>
                     <div class="stars">★★★★</div>
@@ -167,7 +167,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=elden-ring-nightreign">
-                  <img src="pictures/elden.png" alt="Elden Ring Nightreign" />
+                  <img src="assets/pictures/elden.png" alt="Elden Ring Nightreign" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Elden Ring Nightreign</h5>
                     <div class="stars">★★★★</div>
@@ -180,7 +180,7 @@ if ($result && $result->num_rows > 0) {
             <div class="row">
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=call-of-duty">
-                  <img src="pictures/cod.png" alt="Call of Duty" />
+                  <img src="assets/pictures/cod.png" alt="Call of Duty" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Call of Duty</h5>
                     <div class="stars">★★</div>
@@ -211,7 +211,7 @@ if ($result && $result->num_rows > 0) {
             <div class="row">
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=playstation-5">
-                  <img src="pictures/ps5.png" alt="Playstation 5" />
+                  <img src="assets/pictures/ps5.png" alt="Playstation 5" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Playstation 5</h5>
                     <div class="stars">★★★★</div>
@@ -220,7 +220,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=xbox-series">
-                  <img src="pictures/xbox.png" alt="Xbox Series" />
+                  <img src="assets/pictures/xbox.png" alt="Xbox Series" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Xbox Series</h5>
                     <div class="stars">★★★★</div>
@@ -229,7 +229,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=pc">
-                  <img src="pictures/pc.png" alt="Pc" />
+                  <img src="assets/pictures/pc.png" alt="Pc" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>PC</h5>
                     <div class="stars">★★★★★</div>
@@ -238,7 +238,7 @@ if ($result && $result->num_rows > 0) {
               </div>
               <div class="col-md-3 game-card">
                 <a class="text-decoration-none" href="jogo.php?game=geforce-now">
-                  <img src="pictures/geforce.png" alt="Geforce Now" />
+                  <img src="assets/pictures/geforce.png" alt="Geforce Now" />
                   <div class="game-info d-flex justify-content-between align-items-center">
                     <h5>Geforce Now</h5>
                     <div class="stars">★★★★★</div>
@@ -250,7 +250,7 @@ if ($result && $result->num_rows > 0) {
               <div class="row">
                 <div class="col-md-3 game-card">
                   <a class="text-decoration-none" href="jogo.php?game=nintendo">
-                    <img src="pictures/nintendo.png" alt="Nintendo" />
+                    <img src="assets/pictures/nintendo.png" alt="Nintendo" />
                     <div class="game-info d-flex justify-content-between align-items-center">
                       <h5>Nintendo</h5>
                       <div class="stars">★★★</div>
@@ -274,7 +274,7 @@ if ($result && $result->num_rows > 0) {
     <div id="footer-container"></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      fetch("footer.html")
+      fetch("src/templates/footer.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("footer-container").innerHTML = data;

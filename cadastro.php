@@ -19,14 +19,14 @@ if (isset($_GET['senhaRepErro'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="icon" href="pictures/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="assets/pictures/favicon.png" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
     <div class="logo mb-3">
-        <img src="pictures/criticalogo.jpg" alt="criticalhit" width="50"> <span>critical</span>hit
+        <img src="assets/pictures/criticalogo.jpg" alt="criticalhit" width="50"> <span>critical</span>hit
     </div>
     <div class="login-container">
         <h3 class="mb-4">Crie sua conta no criticalhit</h3>
@@ -41,7 +41,7 @@ if (isset($_GET['senhaRepErro'])) {
             </div>
             <?php endif; ?>
         <i class="bi bi-person-fill"></i>
-        <form action="auth/criarconta.php" method="POST">
+        <form action="src/auth/criarconta.php" method="POST">
         <input type="username" class="form-control mb-3" placeholder="Usuário" id="user" name="username" required>
         <i class="bi bi-envelope-fill"></i>
         <input type="email" class="form-control mb-3" placeholder="E-mail" id="email" name="email" required>
