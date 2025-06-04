@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/06/2025 às 20:19
+-- Tempo de geração: 04/06/2025 às 22:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -90,6 +90,7 @@ INSERT INTO `jogo` (`id`, `nome`, `url_img`, `descricao`, `nota`, `slug`, `plata
 --
 -- Estrutura para tabela `plataforma`
 --
+
 CREATE TABLE `plataforma` (
   `id` int(5) NOT NULL,
   `nome` varchar(20) NOT NULL,
@@ -102,12 +103,12 @@ CREATE TABLE `plataforma` (
 --
 
 INSERT INTO `plataforma` (`id`, `nome`, `url_img`, `nota`) VALUES
-(1, 'Steam', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/2048px-Steam_icon_logo.svg.png', 5),
-(2, 'Playstation 5', 'https://logos-world.net/wp-content/uploads/2023/08/Playstation-5-Symbol.png', 3),
-(3, 'Xbox Series', 'https://images.seeklogo.com/logo-png/37/2/xbox-series-x-logo-png_seeklogo-370652.png', 4),
+(1, 'Steam', 'https://www.teteututors.tech/wp-content/uploads/2022/04/steam-logo-fundo-azul.png', 5),
+(2, 'Playstation 5', 'https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/06/playstat-ion-ps-logo-blue-background.jpg', 3),
+(3, 'Xbox Series', 'https://observatoriodegames.com.br/wp-content/uploads/2023/10/logo-xbox-1024x768.png', 4),
 (4, 'PC', 'https://cdn.dribbble.com/userupload/12768721/file/original-afff28bc9d644b90debc8cdc0aa80fb8.jpg', 5),
-(5, 'Geforce Now', 'https://freepnglogo.com/images/all_img/nvidia-logo-0066.png', 5),
-(6, 'Nintendo Switch ', 'https://images.seeklogo.com/logo-png/29/2/nintendo-switch-logo-png_seeklogo-298865.png', 4);
+(5, 'Geforce Now', 'https://uploads.sempreupdate.com.br/2023/03/1-15-1024x576.jpg', 5),
+(6, 'Nintendo Switch ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Nintendo_Switch_logo.svg/2048px-Nintendo_Switch_logo.svg.png', 4);
 
 -- --------------------------------------------------------
 
