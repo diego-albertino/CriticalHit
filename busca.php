@@ -24,7 +24,9 @@ if ($conn->connect_error) {
 <body class="p-4">
     <div class="container">
         <div class="logo mb-3">
-            <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+            <a href="index.php" class="text-decoration-none" style="color: inherit;" title="Voltar para a página inicial">
+                <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+            </a>
         </div>
         <form method="get" class="mb-4">
             <div class="input-group">
@@ -78,6 +80,7 @@ if ($conn->connect_error) {
 
         $conn->close();
         ?>
+        
     </div>
 </body>
 </html>

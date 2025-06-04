@@ -24,6 +24,6 @@ if ($id > 0) {
 
 $conn->close();
 
-header("Location: busca.php?mensagem=" . urlencode($mensagem));
+header("Location: ../../busca.php");
 exit;
 ?>
