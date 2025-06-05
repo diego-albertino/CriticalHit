@@ -17,7 +17,7 @@ function fetchGameDetails() {
   const slug = params.get("game"); // Recebe o slug do jogo através do parâmetro 'game' da URL
 
   // Acessa o arquivo PHP que faz a requisição ao banco de dados
-  fetch(`src/actions/pagina_jogo.php?slug=${encodeURIComponent(slug)}`)
+  fetch(`src/actions/carregar_dados_do_jogo.php?slug=${encodeURIComponent(slug)}`)
     .then((response) => response.json())
     .then((data) => {
       games.game_id = data.id;

@@ -22,7 +22,7 @@ form.addEventListener("submit", (event) => {
   const formData = new FormData(form);
 
   // Envia os dados para o servidor usando fetch
-  fetch("src/actions/salvar_comentario.php", {
+  fetch("src/actions/comentario/salvar_comentario.php", {
     method: "POST",
     body: formData,
   })
@@ -73,7 +73,7 @@ function carregarComentariosExistentes(gameId, Sort = "newest") {
   formData.append("game_id", gameId);
   formData.append("sort", Sort);
 
-  fetch("src/actions/carregar_comentarios.php", {
+  fetch("src/actions/comentario/carregar_comentarios.php", {
     method: "POST",
     body: formData,
   })

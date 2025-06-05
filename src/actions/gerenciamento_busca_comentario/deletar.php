@@ -24,6 +24,6 @@ if ($id > 0) {
 
 $conn->close();
 
-header("Location: ../../busca.php");
+header("Location: ../../../busca.php");
 exit;
 ?>

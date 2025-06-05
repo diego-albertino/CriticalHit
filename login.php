@@ -24,7 +24,9 @@ if (isset($_GET['contaJaCriada'])) {
 </head>
 <body>
     <div class="logo mb-3">
-        <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+        <a href="index.php" class="text-decoration-none" style="color: inherit;" title="Voltar para a página inicial">
+            <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
+        </a>
     </div>
     <div class="login-container">
         <h3 class="mb-4">Que bom vê-lo novamente</h3>

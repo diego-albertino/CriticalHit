@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultCheck = $stmtCheck->get_result();
 
     if ($resultCheck->num_rows > 0) {
-        header("Location: ../cadastro.php?contaJaCriada=true&nome=$nome");
+        header("Location: ../../cadastro.php?contaJaCriada=true&nome=$nome");
         exit();
     } else {
         // Insere os dados no banco de dados
@@ -36,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtInsert->bind_param("sss", $nome, $email, $senha);
 
         if ($stmtInsert->execute()) {
-            header("Location: ../login.php?contaCriada=true&nome=$nome");
+            header("Location: ../../login.php?contaCriada=true&nome=$nome");
             exit();
         } else {
-            header("Location: ../cadastro.php?error=true&nome=$nome");
+            header("Location:  ../../cadastro.php?error=true&nome=$nome");
             exit();
         }
 

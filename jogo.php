@@ -26,7 +26,7 @@ $username = $_SESSION['username'] ?? '';
       </div>
 
       <!-- Mini-janela para fazer os comentários -->
-      <form id="modal" class="modal hidden" action="src/actions/salvar_comentario.php" method="POST">
+      <form id="modal" class="modal hidden" action="src/actions/comentario/salvar_comentario.php" method="POST">
         <div class="modal-content">
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
@@ -92,7 +92,7 @@ $username = $_SESSION['username'] ?? '';
     </script>
     <script src="scripts/jogo.js"></script>
     <script src="scripts/modal.js"></script>
-    <script src="scripts/commentPost.js"></script>
+    <script src="scripts/postar_comentario.js"></script>
     <script>
       fetch("src/templates/footer.html")
         .then((response) => response.text())

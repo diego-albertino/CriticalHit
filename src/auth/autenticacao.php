@@ -3,11 +3,11 @@ session_start();
 $usuario = $_POST['username'];
 $senha = $_POST['pass'];
 function loginRedir() {
-    header('Location: /criticalhit/index.php');
+    header('Location: ../../index.php');
     exit();
 }
 function loginFailed() {
-    header('Location: /criticalhit/login.php?error=1');
+    header('Location: ../../login.php?error=1');
     exit();
 }
 $localhostbd = "localhost";
