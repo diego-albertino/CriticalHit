@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04/06/2025 às 22:27
+-- Tempo de geração: 16/06/2025 às 01:23
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -56,7 +56,8 @@ INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`
 (25, 'Miranha', '2025-06-02 18:01:58', '3', 4, 1, 2),
 (26, 'Peter Park é o melhor protagonista', '2025-06-02 18:14:11', '4', 4, 1, 2),
 (27, 'Muito emocionate, pena que o Joel...', '2025-06-02 18:17:47', '5', 5, 1, 1),
-(28, 'Faz o Elli', '2025-06-02 18:18:35', '2', 5, 1, 1);
+(28, 'Faz o Elli', '2025-06-02 18:18:35', '2', 5, 1, 1),
+(29, 'ruim', '2025-06-15 23:12:49', '5', 4, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -120,18 +121,20 @@ CREATE TABLE `usuario` (
   `id` int(10) NOT NULL,
   `nome` varchar(40) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `senha` char(60) NOT NULL
+  `senha` char(60) NOT NULL,
+  `is_superuser` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'Leandro', 'leandro@gmail.com', '$2y$10$mOxF3h9pAdFCA/gLM3Tr5uUa.9uzkn62VDyWeEKnV9jPUdjpFu5Za'),
-(2, 'maykon', 'maykon@gmail.com', 'maykon123'),
-(3, 'joana', 'joana@gmail', '$2y$10$Zmu8ckQGy3qe3bDYHPSg3.jJPzskcKjyQ7v01c5JVN8HoyL72EpAm'),
-(4, 'jao', 'jao@gmail.com', 'jao123');
+INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `is_superuser`) VALUES
+(1, 'Leandro', 'leandro@gmail.com', '$2y$10$mOxF3h9pAdFCA/gLM3Tr5uUa.9uzkn62VDyWeEKnV9jPUdjpFu5Za', NULL),
+(2, 'maykon', 'maykon@gmail.com', 'maykon123', NULL),
+(3, 'joana', 'joana@gmail', '$2y$10$Zmu8ckQGy3qe3bDYHPSg3.jJPzskcKjyQ7v01c5JVN8HoyL72EpAm', NULL),
+(4, 'jao', 'jao@gmail.com', 'jao123', NULL),
+(5, 'lokoabreu', 'lokoabreu@gmail.com', '$2y$10$iXgMq24L/eJbONg1I3UpG.K8XHYzEEkI9o6SYYkZL8SUWSsSNRUmK', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -173,7 +176,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
@@ -185,7 +188,7 @@ ALTER TABLE `jogo`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restrições para tabelas despejadas
