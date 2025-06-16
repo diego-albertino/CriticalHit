@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/06/2025 às 01:23
+-- Tempo de geração: 16/06/2025 às 02:57
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -57,7 +57,8 @@ INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`
 (26, 'Peter Park é o melhor protagonista', '2025-06-02 18:14:11', '4', 4, 1, 2),
 (27, 'Muito emocionate, pena que o Joel...', '2025-06-02 18:17:47', '5', 5, 1, 1),
 (28, 'Faz o Elli', '2025-06-02 18:18:35', '2', 5, 1, 1),
-(29, 'ruim', '2025-06-15 23:12:49', '5', 4, 1, 2);
+(33, 'Não presta!', '2025-06-16 00:51:19', '5', 4, 1, 2),
+(34, 'ruim', '2025-06-16 00:52:58', '5', 4, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -134,7 +135,8 @@ INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `is_superuser`) VALUES
 (2, 'maykon', 'maykon@gmail.com', 'maykon123', NULL),
 (3, 'joana', 'joana@gmail', '$2y$10$Zmu8ckQGy3qe3bDYHPSg3.jJPzskcKjyQ7v01c5JVN8HoyL72EpAm', NULL),
 (4, 'jao', 'jao@gmail.com', 'jao123', NULL),
-(5, 'lokoabreu', 'lokoabreu@gmail.com', '$2y$10$iXgMq24L/eJbONg1I3UpG.K8XHYzEEkI9o6SYYkZL8SUWSsSNRUmK', NULL);
+(5, 'lokoabreu', 'lokoabreu@gmail.com', '$2y$10$iXgMq24L/eJbONg1I3UpG.K8XHYzEEkI9o6SYYkZL8SUWSsSNRUmK', NULL),
+(6, 'Kalel', 'kalel@gmail.com', '$2y$10$sI29sK8QrMoXxOkMnUmyi.T.RpMzHi0z0Q7Vr1p71wyHax8FjRITe', 1);
 
 --
 -- Índices para tabelas despejadas
@@ -176,7 +178,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
@@ -188,7 +190,7 @@ ALTER TABLE `jogo`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Restrições para tabelas despejadas
