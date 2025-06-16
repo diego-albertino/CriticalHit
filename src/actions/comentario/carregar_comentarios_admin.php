@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
         if ($isAdmin) {
             // Passa o slug no link junto com id_com
             $slugUrl = urlencode($slug);
-            echo "<a href='src/actions/comentario/excluir_comentario.php?id_com={$idComentario}&slug={$slugUrl}' class='btn btn-sm btn-danger ms-3' style='align-self:flex-end;' onclick=\"return confirm('Deseja realmente excluir este comentário?');\">Removeraaaaa</a>";
+            echo "<a href='src/actions/comentario/excluir_comentario.php?id_com={$idComentario}&slug={$slugUrl}' class='btn btn-sm btn-danger ms-3' style='align-self:flex-end;' onclick=\"return confirm('Deseja realmente excluir este comentário?');\">Remover</a>";
         }
 
         echo "</p>";
