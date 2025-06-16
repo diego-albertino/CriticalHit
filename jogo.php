@@ -1,11 +1,17 @@
 <?php
 session_start();
 $username = $_SESSION['username'] ?? '';
+if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
+    $isAdmin = true;
+} else {
+    $isAdmin = false;
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detalhes do Jogo</title>
@@ -18,6 +24,7 @@ $username = $_SESSION['username'] ?? '';
   </head>
   <body>
     <div id="navbar-container"></div>
+    
     <!-- Contêiner para a navbar -->
 
     <div class="container">
@@ -124,10 +131,13 @@ fetch("src/templates/navbar.html")
     console.log("Erro ao carregar a navbar: ", error);
   });
 </script>
-
     <script src="scripts/jogo.js"></script>
     <script src="scripts/modal.js"></script>
+    <?php if ($isAdmin): ?>
+    <script src="scripts/postar_comentario_admin.js"></script>
+    <?php else: ?>
     <script src="scripts/postar_comentario.js"></script>
+    <?php endif; ?>
     <script>
       fetch("src/templates/footer.html")
         .then((response) => response.text())
@@ -135,5 +145,6 @@ fetch("src/templates/navbar.html")
           document.getElementById("footer-container").innerHTML = data;
         });
     </script>
+
   </body>
 </html>
