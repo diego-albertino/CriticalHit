@@ -1,16 +1,6 @@
 <?php
 // Conexão com o banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "criticalhit";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verifica a conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+require_once __DIR__ . '/../config/db_connect.php';
 
 // pegar o valor da variável 'slug' criado no javascript e colocar na variável $slug
 $slug = isset($_GET['slug']) ? $_GET['slug'] : '';

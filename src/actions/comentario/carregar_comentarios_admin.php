@@ -1,13 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "criticalhit";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+//Inclui o arquivo de conexão com o banco de dados
+require_once __DIR__ . '/../../config/db_connect.php';
 
 session_start();
 
