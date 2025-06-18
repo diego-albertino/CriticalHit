@@ -67,70 +67,89 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
     <div id="footer-container"></div>
 
     <script>
-  // Carregar a navbar dinamicamente
-  const phpUsername = "<?php echo $username; ?>";
-fetch("src/templates/navbar.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("navbar-container").innerHTML = data;
-
-    const loginLink = document.getElementById("login-link");
-    const loginText = document.getElementById("login-text");
-
-    if (loginLink && loginText) {
-      if (phpUsername !== "") {
-        // Usuário logado: transformar o link num dropdown
-
-        loginLink.href = "#"; // Remove o link padrão
-
-        loginLink.innerHTML = `
-          <span id="userMenuToggle" class="d-flex align-items-center text-dark" 
-    style="max-width: 150px; cursor: pointer; user-select: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-    <i class="bi bi-person-fill me-2"></i>${phpUsername}
-  </span>
-          <div id="userDropdown" class="position-absolute bg-white border rounded shadow-sm"
-            style="min-width: 150px; left: 0; top: 100%; display: none; z-index: 1050;">
-            <a href="meu_perfil.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">
-              Meu perfil
-            </a>
-            <hr class="my-1" />
-            <a href="src/actions/logout.php" class="d-block px-3 py-2 text-decoration-none text-danger hover-bg-light">
-              Sair
-            </a>
-          </div>
-        `;
-
-        // Estilo para posicionar dropdown corretamente
-        loginLink.style.position = "relative";
-        loginLink.style.display = "inline-block";
-
-        const toggle = document.getElementById("userMenuToggle");
-        const dropdown = document.getElementById("userDropdown");
-
-        toggle.addEventListener("click", (e) => {
-          e.preventDefault();
-          dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
-        });
-
-        window.addEventListener("click", (e) => {
-          if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
-            dropdown.style.display = "none";
+      fetch('src/actions/usuario/get_user_id.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.success && data.user_id) {
+            document.getElementById('user_id').value = data.user_id;
           }
         });
-      } else {
-        // Usuário não logado: manter padrão "Iniciar sessão"
-        loginText.textContent = "Iniciar sessão";
-        loginLink.setAttribute("href", "login.php");
-        loginLink.style.position = "";
-      }
-    } else {
-      console.log("Os elementos de login não foram encontrados.");
-    }
-  })
-  .catch((error) => {
-    console.log("Erro ao carregar a navbar: ", error);
-  });
-</script>
+    </script>
+    <script>
+      // Carregar a navbar dinamicamente
+      const phpUsername = "<?php echo $username; ?>";
+      fetch("src/templates/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar-container").innerHTML = data;
+
+          const loginLink = document.getElementById("login-link");
+          const loginText = document.getElementById("login-text");
+
+          if (loginLink && loginText) {
+            if (phpUsername !== "") {
+              // Usuário logado: transformar o link num dropdown
+
+              loginLink.href = "#"; // Remove o link padrão
+
+              loginLink.innerHTML = `
+                <span id="userMenuToggle" class="d-flex align-items-center text-dark" 
+                  style="max-width: 150px; cursor: pointer; user-select: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                  <i class="bi bi-person-fill me-2"></i>${phpUsername}
+                </span>
+                <div id="userDropdown" class="position-absolute bg-white border rounded shadow-sm"
+                  style="min-width: 150px; left: 0; top: 100%; display: none; z-index: 1050;">
+                  <a href="meu_perfil.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">
+                    Meu perfil
+                  </a>
+                  <hr class="my-1" />
+                  <a href="src/actions/logout.php" class="d-block px-3 py-2 text-decoration-none text-danger hover-bg-light">
+                    Sair
+                  </a>
+                </div>
+              `;
+
+              // Estilo para posicionar dropdown corretamente
+              loginLink.style.position = "relative";
+              loginLink.style.display = "inline-block";
+
+              const toggle = document.getElementById("userMenuToggle");
+              const dropdown = document.getElementById("userDropdown");
+
+              toggle.addEventListener("click", (e) => {
+                e.preventDefault();
+                dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+              });
+
+              window.addEventListener("click", (e) => {
+                if (!toggle.contains(e.target) && !dropdown.contains(e.target)) {
+                  dropdown.style.display = "none";
+                }
+              });
+            } else {
+              // Usuário não logado: manter padrão "Iniciar sessão"
+              loginText.textContent = "Iniciar sessão";
+              loginLink.setAttribute("href", "login.php");
+              loginLink.style.position = "";
+            }
+          } else {
+            console.log("Os elementos de login não foram encontrados.");
+          }
+        })
+        .catch((error) => {
+          console.log("Erro ao carregar a navbar: ", error);
+        });
+
+          // Carregar o rodapé dinamicamente
+          fetch("src/templates/footer.html")
+            .then((response) => response.text())
+            .then((data) => {
+              document.getElementById("footer-container").innerHTML = data;
+            })
+            .catch((error) => {
+              console.log("Erro ao carregar o rodapé: ", error);
+            });
+    </script>
     <script src="scripts/jogo.js"></script>
     <script src="scripts/modal.js"></script>
     <?php if ($isAdmin): ?>
