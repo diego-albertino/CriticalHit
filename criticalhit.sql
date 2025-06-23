@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/06/2025 às 02:57
+-- Tempo de geração: 23/06/2025 às 15:27
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -73,7 +73,9 @@ INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`
 (57, 'Um jogo para se emocionar!\r\n\r\nNão sou de escrever tantas resenhas detalhadas na Steam, mas acabei de zerar TLOU 2 no exato momento em que estou escrevendo isso, e acho que seria injusto não falar de uma história tão fantástica quanto este jogo é! Pouparei os spoilers por aqui porque já sofri muito com eles nos últimos 4 anos em que aguardei pela chegada dessa franquia para PC, e acho que, apesar de não ter afetado tanto a minha diversão experienciando este jogo, acabou limitando a minha emoção e na imersão que eu poderia ter tido de uma maneira muito maior se não soubesse de absolutamente nada do que aconteceria.\r\n\r\nJogabilidade: 10/10\r\n\r\nPra quem acompanha páginas de jogos no falecido \"Twitter\", sabe que posts elogiando a gameplay de TLOU 2 são tão genéricos quanto falar do jardineiro do Leicester City, mas convenhamos: que jogabilidade delicinha! Variar a maneira de matar inimigos, seja no 100% stealthy ou botando o p4u na mesa e chegando no estilo \"tiro, porrada e bomba\" é uma das m', '2025-06-18 16:29:49', '5', 5, 9, 1),
 (58, 'Gameplay com os carros, compra das peças e customização é até divertida, no entanto a mecânica de perseguição de polícia e ter que seguir a pista passando por certos \"pontos de checagem\" obrigatórios tira quase que completamente a graça do jogo! No início do jogo é basicamente impossível fugir da polícia o que gera penalidade de vc perder dinheiro o que apaga parte do seu progresso as vezes de horas. Conforme vc melhora o carro não muda muita coisa tbm. Simplesmente uma das piores mecânicas que já vi em qualquer jogo!! Daria uma nota 7.5/10, mas como existe o lixo da polícia roubada e vc não poder cortar caminho... no máximo dou 5/10... só vale comprar na promoção e olhe lá!', '2025-06-18 16:31:08', '3', 3, 9, 1),
 (59, 'mais um jogo do tipo console,não tem câmera interna,não tem opção de configurar os controles,os carros parece que estão amarrados.jogo não presta para quem tem cockpit no pc', '2025-06-18 16:32:38', '1', 3, 3, 1),
-(60, 'Tentei jogar e não consegui! Avançava um pouco no mapa e dava erro na engine Unreal saindo do game. Meu PC supera as configs recomendadas, mas parece que o motor gráfico ( Unreal 5) não está 100%. Estou louco pra jogar esse clássico, mas infelizmente não foi dessa vez...lamento.', '2025-06-18 16:33:41', '1', 1, 3, 1);
+(60, 'Tentei jogar e não consegui! Avançava um pouco no mapa e dava erro na engine Unreal saindo do game. Meu PC supera as configs recomendadas, mas parece que o motor gráfico ( Unreal 5) não está 100%. Estou louco pra jogar esse clássico, mas infelizmente não foi dessa vez...lamento.', '2025-06-18 16:33:41', '1', 1, 3, 1),
+(61, '🐯', '2025-06-23 13:25:24', '5', 11, 6, 1),
+(62, '\"Dê um trocado pro seu bruxo, oh vale abundante...\"', '2025-06-23 13:26:14', '5', 10, 7, 3);
 
 -- --------------------------------------------------------
 
@@ -101,7 +103,9 @@ INSERT INTO `jogo` (`id`, `nome`, `url_img`, `descricao`, `nota`, `slug`, `plata
 (3, 'NFS Heat', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co209t.png', 'Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.', 2, 'need-for-speed-heat', 1),
 (4, 'Marvel\'s Spider-Man 2: Launch Edition', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6niz.png', 'Pendure-se, pule e plane com as novas Asas de Teia para percorrer a Nova York da Marvel. Alterne rapidamente entre Peter Parker e Miles Morales para jogar histórias diferentes e usar novos poderes épicos enquanto o infame vilão Venom ameaça a vida deles, ', 5, 'marvels-spider-man-2-launch-edition', 2),
 (5, 'The Last of Us', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png', 'Em uma civilização devastada, em que infectados e sobreviventes veteranos estão à solta, Joel, um protagonista abatido, é contratado para tirar uma garota de 14 anos, Ellie, de uma zona de quarentena militar. No entanto, o que começa como um pequeno servi', 5, 'the-last-of-us', 1),
-(8, 'Grand Theft Auto: San Andreas', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg', 'Returning after his mother\\\'s murder to the semi-fictional city of Los Santos (based on Los Angeles), Carl Johnson, a former gang banger, must take back the streets for his family and friends by gaining respect and once again gaining control over the stre', 0, 'grand-theft-auto-san-andreas', 3);
+(8, 'Grand Theft Auto: San Andreas', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg', 'Returning after his mother\\\'s murder to the semi-fictional city of Los Santos (based on Los Angeles), Carl Johnson, a former gang banger, must take back the streets for his family and friends by gaining respect and once again gaining control over the stre', 0, 'grand-theft-auto-san-andreas', 3),
+(10, 'The Witcher 3: Wild Hunt', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg', 'The Witcher 3: Wild Hunt is an open-world action role-playing game developed by CD Projekt Red.\\n\\nSet in a dark fantasy world, the game follows Geralt of Rivia, a monster hunter searching for his adopted daughter, Ciri, while navigating political conflic', 0, 'the-witcher-3-wild-hunt', 3),
+(11, 'Far Cry: Primal', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co28ha.jpg', 'Gamers play as TAKKAR, a seasoned hunter and the last surviving member of his hunting group. Arriving in the majestic and savage land of Oros, players will pursue one single goal; survive in a world where humans are the prey. They will meet a cast of memo', 0, 'far-cry-primal', 1);
 
 -- --------------------------------------------------------
 
@@ -127,27 +131,6 @@ INSERT INTO `plataforma` (`id`, `nome`, `url_img`, `nota`) VALUES
 (4, 'PC', 'https://cdn.dribbble.com/userupload/12768721/file/original-afff28bc9d644b90debc8cdc0aa80fb8.jpg', 5),
 (5, 'Geforce Now', 'https://uploads.sempreupdate.com.br/2023/03/1-15-1024x576.jpg', 5),
 (6, 'Nintendo Switch ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Nintendo_Switch_logo.svg/2048px-Nintendo_Switch_logo.svg.png', 4);
-
--- --------------------------------------------------------
-
---
--- Estrutura para tabela `solicitacao_jogo`
---
-
-CREATE TABLE `solicitacao_jogo` (
-  `id_solicitacao` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL,
-  `titulo_solicitado` text NOT NULL,
-  `desc_solicitado` text NOT NULL,
-  `solicitacao_atendida` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Despejando dados para a tabela `solicitacao_jogo`
---
-
-INSERT INTO `solicitacao_jogo` (`id_solicitacao`, `id_usuario`, `titulo_solicitado`, `desc_solicitado`, `solicitacao_atendida`) VALUES
-(2, 5, 'GTA San Andreas', 'Queria GTA San Andreas... amo esse jogo! Por favor, incluam ae', 1);
 
 -- --------------------------------------------------------
 
@@ -203,12 +186,6 @@ ALTER TABLE `plataforma`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices de tabela `solicitacao_jogo`
---
-ALTER TABLE `solicitacao_jogo`
-  ADD PRIMARY KEY (`id_solicitacao`);
-
---
 -- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -222,19 +199,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT de tabela `solicitacao_jogo`
---
-ALTER TABLE `solicitacao_jogo`
-  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`

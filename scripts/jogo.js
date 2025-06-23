@@ -57,7 +57,7 @@ function loadGameDetails() {
         <img src="${games.image}" alt="${games.title}" class="game-image" />
         <div class="game-info">
             <h1 class="game-title">${games.title}</h1>
-            <p class="game-description">${games.description}</p>
+            <p class="game-description">${games.description.replace(/\\n/g, "")}</p>
             <div class="rating">${"★".repeat(games.rating)}</div>
         </div>
     </div>

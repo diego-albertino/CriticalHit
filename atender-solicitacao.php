@@ -146,12 +146,12 @@ $isAdmin = true;
             dropdown.className = "position-absolute bg-white border rounded shadow-sm";
             dropdown.style.cssText = "min-width:150px;left:0;top:100%;display:none;z-index:1050;";
             dropdown.innerHTML = `
-              <a href="meu_perfil.php" class="d-block px-3 py-2 text-dark">Meu perfil</a>
+              <a href="meu_perfil.php" class="d-block px-3 py-2 text-dark text-decoration-none">Meu perfil</a>
               ${isAdmin
-                ? '<a href="solicitacoes.php" class="d-block px-3 py-2 text-dark">Solicitações de jogos</a>'
-                : '<a href="solicitar-jogo.php" class="d-block px-3 py-2 text-dark">Solicitar um jogo</a>'}
+                ? '<a href="solicitacoes.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitações de jogos</a>'
+                : '<a href="solicitar-jogo.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitar um jogo</a>'}
               <hr class="my-1"/>
-              <a href="src/actions/logout.php" class="d-block px-3 py-2 text-danger">Sair</a>
+              <a href="src/actions/logout.php" class="d-block px-3 py-2 text-danger text-decoration-none">Sair</a>
             `;
 
             loginLink.appendChild(toggle);
