@@ -3,39 +3,22 @@ session_start();
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 
-$servername = "localhost";
-$username = "root";
-$password = ""; 
-$dbname = "criticalhit"; 
+// Inclui o arquivo de conexão com o banco de dados
+require_once 'src/config/db_connect.php';
 
-// Cria conexão
-$conn = new mysqli($servername, $username, $password, $dbname);
+// Acessa a ação de buscar jogos
+require_once 'src/actions/jogo/buscar_jogos.php';
 
-// Checa conexão
-if ($conn->connect_error) {
-    die("Falha na conexão: " . $conn->connect_error);
-}
+// Busca todos os jogos do banco
+$games = buscarTodosOsJogos($conn);
 
-
-// Buscar jogos do banco
-$sql = "SELECT * FROM jogo ORDER BY id DESC"; 
-$result = $conn->query($sql);
-$games = [];
-if ($result && $result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $games[] = $row;
-  }
-}
+// Acessa a ação de buscar plataformas
+require_once 'src/actions/plataforma/buscar_plataforma.php';
 
 // Buscar plataformas do banco
-$sql = "SELECT * FROM plataforma ORDER BY id DESC"; 
-$result = $conn->query($sql);
-$plataformas = [];
-if ($result && $result->num_rows > 0) {
-  while ($row = $result->fetch_assoc()) {
-    $plataformas[] = $row;
-  }
-}
+$plataformas = buscarTodasAsPlataformas($conn);
+
+// Fecha a conexão com o banco de dados
 
 ?>
 

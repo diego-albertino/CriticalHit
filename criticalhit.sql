@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23/06/2025 às 05:30
+-- Tempo de geração: 16/06/2025 às 02:57
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -43,14 +43,11 @@ CREATE TABLE `comentario` (
 
 INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`, `id_usuario`, `id_plataforma`) VALUES
 (1, 'Não tão bom assim', '2025-06-02 17:55:23', '3', 2, 1, 1),
-(2, 'Muito bom gostei', '2025-06-02 17:56:39', '4', 2, 2, 1),
-(3, 'Poderia ser melhor', '2025-06-02 17:56:39', '2', 2, 4, 1),
 (4, 'Amei mimosa', '2025-06-02 17:56:39', '5', 2, 3, 1),
 (5, 'adorei amores, tudo de bom, arrasou', '2025-06-02 17:56:39', '5', 2, 1, 1),
 (6, '⣿⣿⣿⣿⠄⠄⡄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⠄⠄⡅⠄⢻⣿⣿⣿⣿⣿⣿⠟⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⠄⠄⡃⠄⢸⣿⣿⣿⠿⠛⠁⢀⣠⠄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⡆⠄⠁⠄⠄⢿⠟⠁⠄⠄⠄⠐⠁⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣀⠄⠄⠄⠈⠄⠄⠄⠄⠄⠄⠄⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡄⠠⢀⢀⡄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⡇⣿⣟⠄⠔⠄⡁⠄⠄⠄⢀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣦⣤⣀⣣⣴⣶⠐⠨⣝⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⢧⣿⣟⣿⣿⣿⣿⣿⣿⣮⣔⣮⣽⣷⣶⣯⡻⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡇⣿⡿⢿⠏⠉⠙⠫⣿⣯⣾⣿⣿⡿⢿⣿⣿⡿⢹⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣇⠄⠄⠄⠄⠄⠄⠺⣿⣿⣿⣿⣿⡿⠏⠁⠄⠄⠹⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣷⡀⠄⠄⠄⢰⡜⢶⢋⠙⠛⠋⠄⠄⠄⠄⣀⣼⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣿⡏⠄⠄⠄⠄⠙⣶⡕⠦⡄⣷⣗⢼⣿⠻⣹⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣿⣃⠄⠄⠄⢠⣀⣀⠙⢶⡌⠙⠋⠼⠄⢸⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡿⣣⣋⣽⣵⣫⣿⣿⣿⣿⣄⢙⢃⣀⣀⣴⣿⣿⣿⣿⣿⣿⣿', '2025-06-02 17:58:04', '5', 1, 1, 5),
 (7, '(°_°)', '2025-06-02 17:55:23', '0', 4, 1, 1),
-(8, 'Não valeu meu tempo', '2025-06-02 17:55:23', '2', 2, 4, 1),
-(22, 'Stardew Valley é um jogo que proporciona uma experiência única e imersiva no gênero de simulação agrícola. O que mais chama atenção é a combinação equilibrada entre a simplicidade dos gráficos pixelados e a complexidade das atividades disponíveis, que vão desde o cultivo de plantas até a interação profunda com os moradores da vila. O sistema de progressão é bastante recompensador, permitindo que o jogador personalize sua fazenda e desenvolva suas habilidades de forma gradual, o que mantém o interesse a longo prazo.\r\n\r\nAlém disso, o jogo oferece um ritmo tranquilo, ideal para quem busca uma pausa do estresse cotidiano, sem abrir mão de desafios e objetivos claros. A variedade de missões, eventos sazonais e exploração de cavernas traz uma dinâmica que evita a monotonia. Outro ponto forte é a narrativa sutil e envolvente, que cria uma conexão emocional com os personagens, incentivando o jogador a investir tempo para conhecê-los melhor.\r\n\r\nEm resumo, Stardew Valley é uma excelente opção pa', '2025-06-02 17:55:23', '5', 2, 3, 1),
+(22, 'Stardew Valley é um jogo que proporciona uma experiência única e imersiva no gênero de simulação agrícola. O que mais chama atenção é a combinação equilibrada entre a simplicidade dos gráficos pixelados e a complexidade das atividades disponíveis, que vão desde o cultivo de plantas até a interação profunda com os moradores da vila. O sistema de progressão é bastante recompensador, permitindo que o jogador personalize sua fazenda e desenvolva suas habilidades de forma gradual, o que mantém o interesse a longo prazo.\r\n\r\nAlém disso, o jogo oferece um ritmo tranquilo, ideal para quem busca uma pausa do estresse cotidiano, sem abrir mão de desafios e objetivos claros. A variedade de missões, eventos sazonais e exploração de cavernas traz uma dinâmica que evita a monotonia. Outro ponto forte é a narrativa sutil e envolvente, que cria uma conexão emocional com os personagens, incentivando o jogador a investir tempo para conhecê-los melhor.', '2025-06-18 15:10:55', '5', 2, 3, 1),
 (23, '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n⣿⠟⠫⢻⣿⣿⣿⣿⢟⣩⡍⣙⠛⢛⣿⣿⣿⠛⠛⠛⠛⠻⣿⣿⣿⣿⣿⡿⢿⣿\r\n⣿⠤⠄⠄⠙⢿⣿⣿⣿⡿⠿⠛⠛⢛⣧⣿⠇⠄⠂⠄⠄⠄⠘⣿⣿⣿⣿⠁⠄⢻\r\n⣿⣿⣿⣿⣶⣄⣾⣿⢟⣼⠒⢲⡔⣺⣿⣧⠄⠄⣠⠤⢤⡀⠄⠟⠉⣠⣤⣤⣤⣾\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣀⣬⣵⣿⣿⣿⣶⡤⠙⠄⠘⠃⠄⣴⣾⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢻⠿⢿⣿⣿⠿⠋⠁⠄⠂⠉⠒⢘⣿⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⡿⣡⣷⣶⣤⣤⣀⡀⠄⠄⠄⠄⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⡿⣸⣿⣿⣿⣿⣿⣿⣿⣷⣦⣰⠄⠄⠄⠄⢾⠿⢿⣿⣿⣿⣿\r\n⣿⡿⠋⣡⣾⣿⣿⣿⡟⠉⠉⠈⠉⠉⠉⠉⠉⠄⠄⠄⠑⠄⠄⠐⡇⠄⠈⠙⠛⠋\r\n⠋⠄⣾⣿⣿⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄\r\n⠄⢸⣿⣿⣿⣿⣿⣯⠄⢠⡀⠄⠄⠄⠄⠄⠄⠄⠄⣀⠄⠄⠄⠄⠁⠄⠄⠄⠄⠄\r\n⠁⢸⣿⣿⣿⣿⣿⣯⣧⣬⣿⣤⣐⣂⣄⣀⣠⡴⠖⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\r\n⠈⠈⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣽⣉⡉⠉⠈⠁⠄⠁⠄⠄⠄⠄⡂⠄⠄⠄⠄⠄\r\n⠄⠄⠙⣿⣿⠿⣿⣿⣿⣿⣷⡤⠈⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠠⠔⠄⠄⠄⠄⠄\r\n⠄⠄⠄⡈⢿⣷⣿⣿⢿⣿⣿⣷⡦⢤⡀⠄⠄⠄⠄⠄⠄⢐⣠⡿⠁⠄⠄⠄⠄⠄', '2025-06-02 17:56:39', '4', 2, 1, 2),
 (24, '(°o°)', '2025-06-02 18:00:18', '5', 2, 1, 1),
 (25, 'Miranha', '2025-06-02 18:01:58', '3', 4, 1, 2),
@@ -58,7 +55,25 @@ INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`
 (27, 'Muito emocionate, pena que o Joel...', '2025-06-02 18:17:47', '5', 5, 1, 1),
 (28, 'Faz o Elli', '2025-06-02 18:18:35', '2', 5, 1, 1),
 (33, 'Não presta!', '2025-06-16 00:51:19', '5', 4, 1, 2),
-(34, 'ruim', '2025-06-16 00:52:58', '5', 4, 1, 2);
+(34, 'ruim', '2025-06-18 13:44:16', '5', 4, 7, 2),
+(43, 'rancho feliz', '2025-06-18 14:45:37', '5', 2, 7, 1),
+(44, 'Jogabilidade refinada, com combates tensos e furtivos', '2025-06-18 14:51:34', '5', 5, 7, 1),
+(45, 'Gráficos incríveis, com Nova York ainda mais viva e detalhada.', '2025-06-18 15:17:22', '5', 4, 9, 2),
+(46, 'NFS Heat resgata a essência das melhores fases da franquia.', '2025-06-18 15:18:02', '5', 3, 9, 1),
+(47, 'Jogo relaxante, perfeito para quem busca uma pausa da rotina', '2025-06-18 15:18:35', '5', 2, 9, 1),
+(48, 'Silent Hill 2 é uma obra-prima que mistura horror, drama e tragédia humana', '2025-06-18 15:19:11', '5', 1, 9, 1),
+(49, '👨‍🌾😾🌽🍓🍅', '2025-06-18 16:16:59', '4', 2, 2, 1),
+(50, '😲😲😲😲', '2025-06-18 16:17:47', '4', 1, 2, 1),
+(51, 'A jogabilidade é boa mas o preço não compensa.', '2025-06-18 16:19:37', '2', 3, 2, 1),
+(52, '⠀⣠⣤⣶⣶⣦⣄⡀  ⠀⢀⣤⣴⣶⣶⣤⣀⠀\r\n⣼⣿⣿⣿⣿⣿⣿⣷⣤⣾⣿⣿⣿⣿⣿⣿⣧\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏\r\n⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠀\r\n⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀\r\n⠀⠀⠀⠀⠀⠉⢿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠀⠀⠀⠀⠙⠻⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀', '2025-06-18 16:20:58', '5', 5, 2, 1),
+(53, '░░▄█▀▀▀░░░░░░░░▀▀▀█▄\r\n▄███▄▄░░▀▄██▄▀░░▄▄███▄\r\n▀██▄▄▄▄████████▄▄▄▄██▀\r\n░░▄▄▄▄██████████▄▄▄▄\r\n░▐▐▀▐▀░▀██████▀░▀▌▀▌▌', '2025-06-18 16:21:56', '5', 4, 2, 2),
+(54, '░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n█▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n█▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n░░░░█░░░▀▀▄░█░░░█░███████░█\r\n░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█', '2025-06-18 16:23:25', '3', 1, 7, 1),
+(55, '░░░░░░███████ ]▄▄▄▄▄▄▄▄\r\n ▂▄▅█████████▅▄▃▂        \r\n[███████████████████]. \r\n◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤..', '2025-06-18 16:26:25', '0', 3, 7, 1),
+(56, '░░░░░░░░░░░░░░░░▄▓▄\r\n░░░░▄█▄░░░░░░░░▄▓▓▓▄\r\n░░▄█████▄░░░░░▄▓▓▓▓▓▄\r\n░▀██┼█┼██▀░░░▄▓▓▓▓▓▓▓▄\r\n▄▄███████▄▄▄▄▄▄▄▄█▄▄▄▄', '2025-06-18 16:27:42', '5', 2, 7, 1),
+(57, 'Um jogo para se emocionar!\r\n\r\nNão sou de escrever tantas resenhas detalhadas na Steam, mas acabei de zerar TLOU 2 no exato momento em que estou escrevendo isso, e acho que seria injusto não falar de uma história tão fantástica quanto este jogo é! Pouparei os spoilers por aqui porque já sofri muito com eles nos últimos 4 anos em que aguardei pela chegada dessa franquia para PC, e acho que, apesar de não ter afetado tanto a minha diversão experienciando este jogo, acabou limitando a minha emoção e na imersão que eu poderia ter tido de uma maneira muito maior se não soubesse de absolutamente nada do que aconteceria.\r\n\r\nJogabilidade: 10/10\r\n\r\nPra quem acompanha páginas de jogos no falecido \"Twitter\", sabe que posts elogiando a gameplay de TLOU 2 são tão genéricos quanto falar do jardineiro do Leicester City, mas convenhamos: que jogabilidade delicinha! Variar a maneira de matar inimigos, seja no 100% stealthy ou botando o p4u na mesa e chegando no estilo \"tiro, porrada e bomba\" é uma das m', '2025-06-18 16:29:49', '5', 5, 9, 1),
+(58, 'Gameplay com os carros, compra das peças e customização é até divertida, no entanto a mecânica de perseguição de polícia e ter que seguir a pista passando por certos \"pontos de checagem\" obrigatórios tira quase que completamente a graça do jogo! No início do jogo é basicamente impossível fugir da polícia o que gera penalidade de vc perder dinheiro o que apaga parte do seu progresso as vezes de horas. Conforme vc melhora o carro não muda muita coisa tbm. Simplesmente uma das piores mecânicas que já vi em qualquer jogo!! Daria uma nota 7.5/10, mas como existe o lixo da polícia roubada e vc não poder cortar caminho... no máximo dou 5/10... só vale comprar na promoção e olhe lá!', '2025-06-18 16:31:08', '3', 3, 9, 1),
+(59, 'mais um jogo do tipo console,não tem câmera interna,não tem opção de configurar os controles,os carros parece que estão amarrados.jogo não presta para quem tem cockpit no pc', '2025-06-18 16:32:38', '1', 3, 3, 1),
+(60, 'Tentei jogar e não consegui! Avançava um pouco no mapa e dava erro na engine Unreal saindo do game. Meu PC supera as configs recomendadas, mas parece que o motor gráfico ( Unreal 5) não está 100%. Estou louco pra jogar esse clássico, mas infelizmente não foi dessa vez...lamento.', '2025-06-18 16:33:41', '1', 1, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -154,11 +169,12 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `is_superuser`) VALUES
 (1, 'Leandro', 'leandro@gmail.com', '$2y$10$mOxF3h9pAdFCA/gLM3Tr5uUa.9uzkn62VDyWeEKnV9jPUdjpFu5Za', NULL),
-(2, 'maykon', 'maykon@gmail.com', 'maykon123', NULL),
+(2, 'maykon', 'maykon@gmail.com', '$2y$10$muFqGsHZVhsMvAZf6H9KHur9AdyBc3mCRCWTivZL45w2BuRZi3GkS', NULL),
 (3, 'joana', 'joana@gmail', '$2y$10$Zmu8ckQGy3qe3bDYHPSg3.jJPzskcKjyQ7v01c5JVN8HoyL72EpAm', NULL),
-(4, 'jao', 'jao@gmail.com', 'jao123', NULL),
 (5, 'lokoabreu', 'lokoabreu@gmail.com', '$2y$10$iXgMq24L/eJbONg1I3UpG.K8XHYzEEkI9o6SYYkZL8SUWSsSNRUmK', NULL),
-(6, 'Kalel', 'kalel@gmail.com', '$2y$10$sI29sK8QrMoXxOkMnUmyi.T.RpMzHi0z0Q7Vr1p71wyHax8FjRITe', 1);
+(6, 'Kalel', 'kalel@gmail.com', '$2y$10$sI29sK8QrMoXxOkMnUmyi.T.RpMzHi0z0Q7Vr1p71wyHax8FjRITe', 1),
+(7, 'Diego', 'diego@gmail.com', '$2y$10$vrusuh3ttVs9hFW5.yvkbOkyBVKK7WXx31GgzjnY9.pccttMnlMB6', NULL),
+(9, 'jao', 'jao@gmail.com', '$2y$10$.WPM0Q4mAwq1sFbBGH8sYu.kThn3jRxpmuu5ch4wQF9kxDgvSMMvC', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -206,7 +222,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
@@ -224,7 +240,7 @@ ALTER TABLE `solicitacao_jogo`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restrições para tabelas despejadas

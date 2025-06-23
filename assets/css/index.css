@@ -6,9 +6,18 @@
 body {
   padding-bottom: 5%;
 }
+
+.carousel-control-next {
+    width: 15px;        /* Reduz a largura da área clicável */
+}
+.carousel-control-prev {
+    width: 15px;        /* Reduz a largura da área clicável */     /* Altura opcional */
+   
+}
 .carousel-control-prev-icon {
   background-image: url("../pictures/seta.png");
   opacity: 1;
+  margin-right: 60%;
   width: 50px;
   height: 50px;
 }
@@ -16,6 +25,7 @@ body {
 .carousel-control-next-icon {
   background-image: url("../pictures/seta2.png");
   opacity: 1;
+  margin-left: 60%;
   width: 50px;
   height: 50px;
 }
@@ -165,4 +175,16 @@ h3 {
 .game-card .game-info .stars {
   flex-shrink: 0; /* Impede que a div das estrelas seja comprimida pelo nome longo. */
   white-space: nowrap; /* Garante que as estrelas permaneçam em uma única linha. */
+}
+
+#userMenuToggle {
+  display: inline-block; /* Garante que a transformação funcione corretamente */
+  padding: 8px 16px; /* Adiciona espaço interno para a pílula */
+  border-radius: 50px; /* Deixa as bordas totalmente arredondadas (formato de pílula) */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Efeito de transformação ao passar o mouse no botão do usuário*/
+#userMenuToggle:hover {
+  background-color: #e9ecef; /* Um cinza um pouco mais visível para o destaque */
 }

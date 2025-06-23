@@ -26,17 +26,7 @@ if (!isset($_GET['slug']) || empty($_GET['slug'])) {
 $slug = $_GET['slug'];
 
 // Conecta ao banco
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "criticalhit";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    http_response_code(500);
-    echo "Falha na conexão com o banco de dados.";
-    exit;
-}
+require_once __DIR__ . '/../../config/db_connect.php';
 
 // Prepara e executa exclusão
 $stmt = $conn->prepare("DELETE FROM comentario WHERE id_com = ?");
