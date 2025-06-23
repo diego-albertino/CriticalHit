@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/06/2025 às 02:57
+-- Tempo de geração: 23/06/2025 às 05:30
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -85,7 +85,8 @@ INSERT INTO `jogo` (`id`, `nome`, `url_img`, `descricao`, `nota`, `slug`, `plata
 (2, 'Stardew Valley', 'https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.png', '“Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida.”', 5, 'stardew-valley', 1),
 (3, 'NFS Heat', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co209t.png', 'Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.', 2, 'need-for-speed-heat', 1),
 (4, 'Marvel\'s Spider-Man 2: Launch Edition', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6niz.png', 'Pendure-se, pule e plane com as novas Asas de Teia para percorrer a Nova York da Marvel. Alterne rapidamente entre Peter Parker e Miles Morales para jogar histórias diferentes e usar novos poderes épicos enquanto o infame vilão Venom ameaça a vida deles, ', 5, 'marvels-spider-man-2-launch-edition', 2),
-(5, 'The Last of Us', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png', 'Em uma civilização devastada, em que infectados e sobreviventes veteranos estão à solta, Joel, um protagonista abatido, é contratado para tirar uma garota de 14 anos, Ellie, de uma zona de quarentena militar. No entanto, o que começa como um pequeno servi', 5, 'the-last-of-us', 1);
+(5, 'The Last of Us', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png', 'Em uma civilização devastada, em que infectados e sobreviventes veteranos estão à solta, Joel, um protagonista abatido, é contratado para tirar uma garota de 14 anos, Ellie, de uma zona de quarentena militar. No entanto, o que começa como um pequeno servi', 5, 'the-last-of-us', 1),
+(8, 'Grand Theft Auto: San Andreas', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg', 'Returning after his mother\\\'s murder to the semi-fictional city of Los Santos (based on Los Angeles), Carl Johnson, a former gang banger, must take back the streets for his family and friends by gaining respect and once again gaining control over the stre', 0, 'grand-theft-auto-san-andreas', 3);
 
 -- --------------------------------------------------------
 
@@ -111,6 +112,27 @@ INSERT INTO `plataforma` (`id`, `nome`, `url_img`, `nota`) VALUES
 (4, 'PC', 'https://cdn.dribbble.com/userupload/12768721/file/original-afff28bc9d644b90debc8cdc0aa80fb8.jpg', 5),
 (5, 'Geforce Now', 'https://uploads.sempreupdate.com.br/2023/03/1-15-1024x576.jpg', 5),
 (6, 'Nintendo Switch ', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Nintendo_Switch_logo.svg/2048px-Nintendo_Switch_logo.svg.png', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `solicitacao_jogo`
+--
+
+CREATE TABLE `solicitacao_jogo` (
+  `id_solicitacao` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `titulo_solicitado` text NOT NULL,
+  `desc_solicitado` text NOT NULL,
+  `solicitacao_atendida` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `solicitacao_jogo`
+--
+
+INSERT INTO `solicitacao_jogo` (`id_solicitacao`, `id_usuario`, `titulo_solicitado`, `desc_solicitado`, `solicitacao_atendida`) VALUES
+(2, 5, 'GTA San Andreas', 'Queria GTA San Andreas... amo esse jogo! Por favor, incluam ae', 1);
 
 -- --------------------------------------------------------
 
@@ -165,6 +187,12 @@ ALTER TABLE `plataforma`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `solicitacao_jogo`
+--
+ALTER TABLE `solicitacao_jogo`
+  ADD PRIMARY KEY (`id_solicitacao`);
+
+--
 -- Índices de tabela `usuario`
 --
 ALTER TABLE `usuario`
@@ -184,7 +212,13 @@ ALTER TABLE `comentario`
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de tabela `solicitacao_jogo`
+--
+ALTER TABLE `solicitacao_jogo`
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
