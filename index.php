@@ -9,6 +9,12 @@ require_once 'src/config/db_connect.php';
 // Acessa a ação de buscar jogos
 require_once 'src/actions/jogo/buscar_jogos.php';
 
+// Acessa a ação de calcular a nota de avaliação
+require_once 'src/actions/jogo/calcular_nota_avaliacao.php';
+
+// Calcula a nota de avaliação para os jogos
+calcularNotaAvaliacao($conn);
+
 // Busca todos os jogos do banco
 $games = buscarTodosOsJogos($conn);
 
@@ -19,7 +25,7 @@ require_once 'src/actions/plataforma/buscar_plataforma.php';
 $plataformas = buscarTodasAsPlataformas($conn);
 
 // Fecha a conexão com o banco de dados
-
+$conn->close();
 ?>
 
 <!DOCTYPE html>
