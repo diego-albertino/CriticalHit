@@ -1,15 +1,8 @@
 <?php
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "criticalhit";
-$conn = new mysqli($host, $usuario, $senha, $banco);
+include_once 'src/config/db_connect.php';
 ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 error_reporting(0);
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
 ?>
 
 <!DOCTYPE html>

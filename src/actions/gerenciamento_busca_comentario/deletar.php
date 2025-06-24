@@ -1,13 +1,5 @@
 <?php
-$host = "localhost";
-$usuario = "root";
-$senha = "";
-$banco = "criticalhit";
-$conn = new mysqli($host, $usuario, $senha, $banco);
-
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
+include_once '../../config/db_connect.php';
 
 $id = isset($_GET['id_com']) ? intval($_GET['id_com']) : 0;
 

@@ -7,13 +7,7 @@ body {
   padding-bottom: 5%;
 }
 
-.carousel-control-next {
-    width: 15px;        /* Reduz a largura da área clicável */
-}
-.carousel-control-prev {
-    width: 15px;        /* Reduz a largura da área clicável */     /* Altura opcional */
-   
-}
+
 .carousel-control-prev-icon {
   background-image: url("../pictures/seta.png");
   opacity: 1;
