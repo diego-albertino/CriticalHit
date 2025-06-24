@@ -19,7 +19,7 @@ if ($result_user && $result_user->num_rows > 0) {
     $stmt->bind_param("iss", $id_usuario, $titulo, $desc);
 
     if ($stmt->execute()) {
-        header("Location: ../../../solicitar-jogo.php?sucesso=1");
+        header("Location: ../../../solicitar_jogo.php?sucesso=1");
         exit();
     } else {
         echo "Erro ao enviar solicitação: " . $stmt->error;

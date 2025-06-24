@@ -149,7 +149,7 @@ $isAdmin = true;
               <a href="meu_perfil.php" class="d-block px-3 py-2 text-dark text-decoration-none">Meu perfil</a>
               ${isAdmin
                 ? '<a href="solicitacoes.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitações de jogos</a>'
-                : '<a href="solicitar-jogo.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitar um jogo</a>'}
+                : '<a href="solicitar_jogo.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitar um jogo</a>'}
               <hr class="my-1"/>
               <a href="src/actions/logout.php" class="d-block px-3 py-2 text-danger text-decoration-none">Sair</a>
             `;
@@ -209,7 +209,7 @@ $isAdmin = true;
         btnIncluir.disabled = true;
         detalhesContainer.style.display = 'none';
 
-        fetch(`buscar-jogos-igdb.php?q=${encodeURIComponent(q)}`)
+        fetch(`src/actions/API_igdb/buscar-jogos-igdb.php?q=${encodeURIComponent(q)}`)
           .then(res => res.json())
           .then(data => {
             jogosCache = data;
@@ -245,7 +245,7 @@ $isAdmin = true;
         }
 
        
-        fetch(`detalhe-jogo-igdb.php?id=${selectedId}`)
+        fetch(`src/actions/API_igdb/detalhe_jogo_igdb.php?id=${selectedId}`)
           .then(res => res.json())
           .then(data => {
             if (data.length === 0) {
@@ -287,8 +287,10 @@ $isAdmin = true;
       btnExcluir.addEventListener('click', () => {
         if (!confirm('Deseja realmente excluir esta solicitação?')) return;
 
-        fetch(`excluir_solicitacao.php?id_solicitacao=${encodeURIComponent(idSolicitacao)}`, {
-          method: 'POST'
+        fetch('src/actions/solicitacao_jogo/excluir_solicitacao.php', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+          body: `id_solicitacao=${encodeURIComponent(idSolicitacao)}`
         })
         .then(res => res.json())
         .then(data => {

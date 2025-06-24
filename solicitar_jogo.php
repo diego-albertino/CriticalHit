@@ -83,7 +83,7 @@ $solicitado = isset($_GET['sucesso']) && $_GET['sucesso'] == 1;
               ${
                 isAdmin
                   ? '<a href="solicitacoes.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitações de jogos</a>'
-                  : '<a href="solicitar-jogo.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitar um jogo</a>'
+                  : '<a href="solicitar_jogo.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitar um jogo</a>'
               }
               <hr class="my-1" />
               <a href="src/actions/logout.php" class="d-block px-3 py-2 text-decoration-none text-danger hover-bg-light">Sair</a>

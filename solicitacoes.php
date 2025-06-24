@@ -94,7 +94,7 @@ $count_sim = $res_sim->num_rows;
               <td><?= htmlspecialchars($r['titulo_solicitado']) ?></td>
               <td><?= htmlspecialchars($r['desc_solicitado']) ?></td>
               <td>
-                <a href="atender-solicitacao.php?id_solicitacao=<?= $r['id_solicitacao'] ?>"
+                <a href="atender_solicitacao.php?id_solicitacao=<?= $r['id_solicitacao'] ?>"
                 class="btn btn-sm btn-acao"
                 title="Atender solicitação">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -192,7 +192,7 @@ $count_sim = $res_sim->num_rows;
               <a href="meu_perfil.php" class="d-block px-3 py-2 text-dark text-decoration-none">Meu perfil</a>
               ${isAdmin
                 ? '<a href="solicitacoes.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitações de jogos</a>'
-                : '<a href="solicitar-jogo.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitar um jogo</a>'}
+                : '<a href="solicitar_jogo.php" class="d-block px-3 py-2 text-dark text-decoration-none">Solicitar um jogo</a>'}
               <hr class="my-1"/>
               <a href="src/actions/logout.php" class="d-block px-3 py-2 text-danger text-decoration-none">Sair</a>
             `;

@@ -8,7 +8,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     exit();
 }
 
-include "src/config/db_connect.php";
+include __DIR__ . '/../../config/db_connect.php';
 
 if (!isset($_POST['id_solicitacao']) || !is_numeric($_POST['id_solicitacao'])) {
     http_response_code(400);

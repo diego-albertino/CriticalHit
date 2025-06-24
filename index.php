@@ -90,7 +90,7 @@ $conn->close();
       <?php if ($isAdmin): ?>
         <a href="solicitacoes.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitações de jogos</a>
       <?php else: ?>
-        <a href="solicitar-jogo.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitar um jogo</a>
+        <a href="solicitar_jogo.php" class="d-block px-3 py-2 text-decoration-none text-dark hover-bg-primary">Solicitar um jogo</a>
       <?php endif; ?>
 
       <hr class="my-1" />
