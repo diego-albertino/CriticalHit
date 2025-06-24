@@ -13,14 +13,10 @@ function loginFailed() {
     exit();
 }
 
-$localhostbd = "localhost";
-$usernamebd = "root";
-$password = "";
-$database = "criticalhit";
+//Inclui o arquivo de conexão com o banco de dados
+require_once __DIR__ . '/../config/db_connect.php';
 
-$mysqli = new mysqli($localhostbd, $usernamebd, $password, $database);
-
-$stmt = $mysqli->prepare("SELECT senha, is_superuser FROM usuario WHERE nome = ?");
+$stmt = $conn->prepare("SELECT senha, is_superuser FROM usuario WHERE nome = ?");
 $stmt->bind_param("s", $usuario);
 $stmt->execute();
 $stmt->store_result();

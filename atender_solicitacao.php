@@ -317,7 +317,7 @@ $isAdmin = true;
           return;
         }
 
-        fetch('insere-jogo.php', {
+        fetch('src/actions/solicitacao_jogo/insere_jogo.php', {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({

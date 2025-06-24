@@ -8,7 +8,7 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
     exit();
 }
 
-include "src/config/db_connect.php";
+include "../../config/db_connect.php";
 
 $data = json_decode(file_get_contents('php://input'), true);
 
@@ -108,6 +108,7 @@ $stmtUpd = $conn->prepare("UPDATE solicitacao_jogo SET solicitacao_atendida = 1 
 $stmtUpd->bind_param("i", $idSolicitacao);
 $stmtUpd->execute();
 $stmtUpd->close();
+$conn->close();
 
 
 echo json_encode(['success' => true]);

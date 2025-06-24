@@ -27,3 +27,5 @@ if ($stmt->execute()) {
     echo json_encode(['success' => false, 'error' => 'Erro ao excluir solicitação']);
 }
 $stmt->close();
+$conn->close();
+?>

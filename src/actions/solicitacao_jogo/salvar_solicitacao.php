@@ -28,4 +28,9 @@ if ($result_user && $result_user->num_rows > 0) {
 } else {
     echo "Usuário não encontrado.";
 }
+$stmt_user->close();
+if (isset($stmt)) {
+    $stmt->close();
+}
+$conn->close();
 ?>
