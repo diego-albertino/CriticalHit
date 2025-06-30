@@ -26,10 +26,16 @@ switch ($Sort) {
         $OrderBy = "ORDER BY c.nota_avaliacao ASC, c.data DESC"; // Desempate pela data
         break;
 }
-
+$avatars = json_decode(file_get_contents(__DIR__ . '/../../../assets/avatars/avatars.json'), true);
+function getAvatarUrl($avatarId, $avatars) {
+    foreach ($avatars as $av) {
+        if ($av['id'] == $avatarId) return $av['url'];
+    }
+    return $avatars[0]['url'] ?? ''; // fallback
+}
 // Prepara a consulta SQL para obter os comentários
 $stmt = $conn->prepare(
-    "SELECT c.texto, c.nota_avaliacao, u.nome
+    "SELECT c.texto, c.nota_avaliacao, u.nome, u.avatar
      FROM comentario c
      JOIN usuario u ON c.id_usuario = u.id
      WHERE c.id_jogo = ? 
@@ -53,15 +59,21 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // Exibe os comentários
     while ($row = $result->fetch_assoc()) {
-        $nome_usuario = htmlspecialchars($row['nome']) ?: "Usuário";
-        // Aplicar nl2br para manter quebras de linha e htmlspecialchars para evitar XSS
-        $texto_comentario = nl2br(htmlspecialchars($row['texto']));
-        $numero_estrelas = intval($row['nota_avaliacao']) ?: 0;
-        $stars = str_repeat("★", $numero_estrelas);
+    $nome_usuario = htmlspecialchars($row['nome']) ?: "Usuário";
+    $texto_comentario = nl2br(htmlspecialchars($row['texto']));
+    $numero_estrelas = intval($row['nota_avaliacao']) ?: 0;
+    $stars = str_repeat("★", $numero_estrelas);
 
-        echo "<p class='comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap'><i class='bi bi-person-circle'>&nbsp;</i><strong>{$nome_usuario}: </strong><br>{$texto_comentario}<br><span class='star-commentPost'>{$stars}</span></p>";
+    $avatarId = intval($row['avatar']);
+    $avatarUrl = getAvatarUrl($avatarId, $avatars);
 
-    }
+    echo "<p class='comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap d-flex align-items-center' style='gap:8px;'>
+            <img src='" . htmlspecialchars($avatarUrl) . "' alt='Avatar de {$nome_usuario}' style='width:32px; height:32px; border-radius:50%; object-fit:cover;'>
+            <strong>{$nome_usuario}:</strong><br>
+            {$texto_comentario}<br>
+            <span class='star-commentPost'>{$stars}</span>
+          </p>";
+}
 }
  else {
     echo "Nenhum comentário encontrado.";

@@ -1,11 +1,14 @@
 <?php
-//Inclui o arquivo de conexão com o banco de dados
+// Inclui o arquivo de conexão com o banco de dados
 require_once __DIR__ . '/../../config/db_connect.php';
+
+// Carrega o JSON dos avatares
+$avatars = json_decode(file_get_contents(__DIR__ . '/../../../assets/avatars/avatars.json'), true);
 
 session_start();
 
-$gameId = $_POST['game_id'];
-$Sort = $_POST['sort'];
+$gameId = $_POST['game_id'] ?? null;
+$Sort = $_POST['sort'] ?? null;
 
 $OrderBy = "ORDER BY c.data DESC";
 switch ($Sort) {
@@ -25,9 +28,20 @@ if ($resultSlug && $rowSlug = $resultSlug->fetch_assoc()) {
 }
 $stmtSlug->close();
 
+// Função para buscar a URL do avatar pelo id
+function getAvatarUrl($avatarId, $avatars) {
+    foreach ($avatars as $av) {
+        if ($av['id'] == $avatarId) {
+            return $av['url'];
+        }
+    }
+    // Retorna o primeiro avatar como fallback
+    return $avatars[0]['url'] ?? '';
+}
+
 // Buscar os comentários
 $stmt = $conn->prepare("
-  SELECT c.id_com, c.texto, c.nota_avaliacao, u.nome
+  SELECT c.id_com, c.texto, c.nota_avaliacao, u.nome, u.avatar
   FROM comentario c
   JOIN usuario u ON c.id_usuario = u.id
   WHERE c.id_jogo = ? $OrderBy
@@ -51,13 +65,16 @@ if ($result->num_rows > 0) {
         $stars = str_repeat("★", $numero_estrelas);
         $idComentario = intval($row['id_com']);
 
+        $avatarId = intval($row['avatar']);
+        $avatarUrl = getAvatarUrl($avatarId, $avatars);
+
         echo "<p class='comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap d-flex justify-content-between align-items-end position-relative'>
-          <span>
-            <i class='bi bi-person-circle'>&nbsp;</i>
-            <strong>{$nome_usuario}: </strong><br>
-            {$texto_comentario}<br>
-            <span class='star-commentPost'>{$stars}</span>
-          </span>";
+          <span class='d-flex align-items-center' style='gap: 8px;'>
+            <img src='" . htmlspecialchars($avatarUrl) . "' alt='Avatar de " . $nome_usuario . "' style='width:32px; height:32px; border-radius:50%; object-fit:cover;'>
+            <strong>{$nome_usuario}:</strong>
+          </span><br>
+          {$texto_comentario}<br>
+          <span class='star-commentPost'>{$stars}</span>";
 
         if ($isAdmin) {
             // Passa o slug no link junto com id_com
@@ -70,6 +87,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "Nenhum comentário encontrado.";
 }
+
 $stmt->close();
 $conn->close();
 ?>
