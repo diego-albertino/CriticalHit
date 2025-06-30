@@ -36,7 +36,7 @@ $avatars = json_decode(file_get_contents(__DIR__ . '/assets/avatars/avatars.json
   <link rel="stylesheet" href="assets/css/modal.css" />
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color:rgb(255, 255, 255);
     }
     .profile-container {
       max-width: 700px;
