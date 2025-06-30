@@ -129,8 +129,8 @@ A plataforma CriticalHit foi desenvolvida com um conjunto robusto de funcionalid
 ### Para Administradores
 
 > Para testar as funcionalidades de administrador, utilize o perfil:  
-> **Usuário:** `admin`  
-> **Senha:** `admin`
+> **usuário:** `admin`  
+> **senha:** `admin`
 
 - 🛡️ **Moderação de Conteúdo:** Tenha controle total sobre a comunidade. Administradores podem remover qualquer comentário diretamente da página do jogo, garantindo um ambiente respeitoso.
 
