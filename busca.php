@@ -12,24 +12,31 @@ error_reporting(0);
     <title>Busca</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
-<body class="p-4">
-    <div class="container">
-        <div class="logo mb-3">
-            <a href="index.php" class="text-decoration-none" style="color: inherit;" title="Voltar para a página inicial">
-                <img src="assets/pictures/criticalogo.jpg" alt="CriticalHit" width="50"> <span>critical</span>hit
-            </a>
-        </div>
-        <form method="get" class="mb-4">
-            <div class="input-group">
-                <input type="text" class="form-control" name="palavra" placeholder="Buscar palavra chave" />
-                <button type="submit" class="btn btn-danger">
-                    <i class="bi bi-search"></i>
-                </button>
-            </div>
-        </form>
 
+
+
+
+<body class="p-4">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand navbar-logo d-flex align-items-center" href="index.php">
+          <img src="assets/pictures/criticalogo.jpg" alt="Logo" class="me-2" id="logo" />
+          <span id="critical">critical</span><span id="hit">hit</span>
+        </a>
+            <form method="get" class="mb-4">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="palavra" placeholder="Buscar palavra chave" />
+                    <button type="submit" class="btn btn-danger">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
         <?php
         $palavra = isset($_GET['palavra']) ? $conn->real_escape_string($_GET['palavra']) : '';
 
@@ -74,6 +81,6 @@ error_reporting(0);
         $conn->close();
         ?>
         
-    </div>
+        
 </body>
 </html>
