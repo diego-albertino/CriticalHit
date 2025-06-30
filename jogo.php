@@ -6,6 +6,26 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
 } else {
     $isAdmin = false;
 }
+include 'src/config/db_connect.php';
+$avatars = json_decode(file_get_contents(__DIR__ . '/assets/avatars/avatars.json'), true);
+$username = $_SESSION['username'] ?? '';
+
+$sql_avatar = "SELECT avatar FROM usuario WHERE nome = ?";
+$stmt_avatar = $conn->prepare($sql_avatar);
+$stmt_avatar->bind_param("s", $username);
+$stmt_avatar->execute();
+$stmt_avatar->bind_result($avatar_id);
+$stmt_avatar->fetch();
+$stmt_avatar->close();
+$urlAvatar = '';
+
+// Buscar a URL do avatar com base no ID
+foreach ($avatars as $avatar) {
+    if ($avatar['id'] == $avatar_id) {
+        $urlAvatar = $avatar['url'];
+        break;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +57,7 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true) {
         <div class="modal-content">
           <span class="close" onclick="closeModal()">×</span>
           <div class="usuario d-flex align-items-center">
-            <i class="bi bi-person-circle"></i>
+            <img src="<?php echo $urlAvatar; ?>" alt="Avatar" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
             <p><strong><?php echo $username ? htmlspecialchars($username) : 'Usuário'; ?></strong></p>
           </div>
           <div class="stars" id="star-container">
@@ -140,6 +160,9 @@ fetch("src/templates/navbar.html")
     console.log("Erro ao carregar a navbar: ", error);
   });
 </script>
+    <script>
+      const userAvatarUrl = "<?php echo $urlAvatar; ?>";
+    </script>
     <script src="scripts/jogo.js"></script>
     <script src="scripts/modal.js"></script>
     <?php if ($isAdmin): ?>
@@ -154,6 +177,7 @@ fetch("src/templates/navbar.html")
           document.getElementById("footer-container").innerHTML = data;
         });
     </script>
+    
 
   </body>
 </html>

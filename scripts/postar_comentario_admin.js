@@ -37,7 +37,7 @@ form.addEventListener("submit", (event) => {
 
         p.innerHTML = `
           <span>
-            <i class="bi bi-person-circle">&nbsp;</i>
+            <img src="${userAvatarUrl}" alt="Avatar" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
             <strong>${nome_usuario}: </strong><br>
             ${texto_comentario_formatado}<br>
             <span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span>

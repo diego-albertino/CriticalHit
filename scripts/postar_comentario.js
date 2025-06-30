@@ -45,7 +45,7 @@ form.addEventListener("submit", (event) => {
         const nome_usuario = phpUsername || "Usuário"; // phpUsername deve estar disponível globalmente
 
         // Montar o HTML interno do <p>
-        p.innerHTML = `<i class="bi bi-person-circle">&nbsp;</i><strong>${nome_usuario}: </strong><br>${texto_comentario_formatado}<br><span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span>`;
+        p.innerHTML = `<img src="${userAvatarUrl}" alt="Avatar" style="width:32px; height:32px; border-radius:50%; object-fit:cover;"><strong>${nome_usuario}: </strong><br>${texto_comentario_formatado}<br><span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span>`;
 
         commentPost.appendChild(p);
         textComment.value = ""; // Limpa o campo de texto do comentário
