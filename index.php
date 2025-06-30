@@ -198,12 +198,6 @@ $conn->close();
                       <img src="<?php echo htmlspecialchars($plataforma['url_img']); ?>" alt="<?php echo htmlspecialchars($plataforma['nome']); ?>" />
                       <div class="game-info d-flex justify-content-between align-items-center">
                         <h5><?php echo htmlspecialchars($plataforma['nome']); ?></h5>
-                        <div class="stars">
-                          <?php
-                          $stars = intval($plataforma['nota']); 
-                          echo str_repeat('★', $stars);
-                          ?>
-                        </div>
                       </div>
                     </a>
                   </div>
