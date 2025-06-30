@@ -110,8 +110,8 @@ if (isset($_SESSION['erro'])) {
     </section>
 
     <!-- Segurança -->
-    <section class="mb-2">
-      <h4 class="mb-5">Segurança</h4>
+    <section class="mb-5">
+      <h4 class="mb-2">Segurança</h4>
       <form action="src/actions/usuario/alterar_senha.php" method="POST">
         <div class="mb-3">
           <label for="senha_atual" class="form-label">Senha Atual</label>
@@ -126,8 +126,8 @@ if (isset($_SESSION['erro'])) {
     </section>
 
     <!-- Avatar -->
-    <section class="mb-2">
-      <h4 class="mb-5">Avatar</h4>
+    <section class="mb-5">
+      <h4 class="mb-2">Avatar</h4>
       <form method="POST" action="src/actions/usuario/salvar_avatar.php">
         <div class="avatar-grid">
   <?php foreach ($avatars as $avatar): ?>
