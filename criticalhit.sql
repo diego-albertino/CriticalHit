@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/06/2025 às 17:11
+-- Tempo de geração: 30/06/2025 às 19:31
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -42,21 +42,14 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`, `id_usuario`, `id_plataforma`) VALUES
-(1, 'Não tão bom assim', '2025-06-02 17:55:23', '3', 2, 1, 1),
-(2, 'Muito bom gostei', '2025-06-02 17:56:39', '4', 2, 2, 1),
-(3, 'Poderia ser melhor', '2025-06-02 17:56:39', '2', 2, 4, 1),
 (4, 'Amei mimosa', '2025-06-02 17:56:39', '5', 2, 3, 1),
-(5, 'adorei amores, tudo de bom, arrasou', '2025-06-02 17:56:39', '5', 2, 1, 1),
-(6, '⣿⣿⣿⣿⠄⠄⡄⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⠄⠄⡅⠄⢻⣿⣿⣿⣿⣿⣿⠟⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⠄⠄⡃⠄⢸⣿⣿⣿⠿⠛⠁⢀⣠⠄⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⡆⠄⠁⠄⠄⢿⠟⠁⠄⠄⠄⠐⠁⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣀⠄⠄⠄⠈⠄⠄⠄⠄⠄⠄⠄⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡄⠠⢀⢀⡄⠄⠄⠄⠄⠄⠄⠄⠄⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⡇⣿⣟⠄⠔⠄⡁⠄⠄⠄⢀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣦⣤⣀⣣⣴⣶⠐⠨⣝⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⢧⣿⣟⣿⣿⣿⣿⣿⣿⣮⣔⣮⣽⣷⣶⣯⡻⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡇⣿⡿⢿⠏⠉⠙⠫⣿⣯⣾⣿⣿⡿⢿⣿⣿⡿⢹⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣇⠄⠄⠄⠄⠄⠄⠺⣿⣿⣿⣿⣿⡿⠏⠁⠄⠄⠹⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣷⡀⠄⠄⠄⢰⡜⢶⢋⠙⠛⠋⠄⠄⠄⠄⣀⣼⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣿⡏⠄⠄⠄⠄⠙⣶⡕⠦⡄⣷⣗⢼⣿⠻⣹⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⣿⣿⣃⠄⠄⠄⢠⣀⣀⠙⢶⡌⠙⠋⠼⠄⢸⣿⣿⣿⣿⣿⣿ \r\n⣿⣿⣿⣿⣿⣿⡿⣣⣋⣽⣵⣫⣿⣿⣿⣿⣄⢙⢃⣀⣀⣴⣿⣿⣿⣿⣿⣿⣿', '2025-06-30 14:42:09', '5', 1, 2, 5),
+(5, 'adorei amores, tudo de bom, arrasou', '2025-06-30 17:25:26', '5', 2, 3, 1),
 (7, '(°_°)', '2025-06-30 14:42:51', '0', 4, 3, 1),
-(8, 'Não valeu meu tempo', '2025-06-02 17:55:23', '2', 2, 4, 1),
 (22, 'Stardew Valley é um jogo que proporciona uma experiência única e imersiva no gênero de simulação agrícola. O que mais chama atenção é a combinação equilibrada entre a simplicidade dos gráficos pixelados e a complexidade das atividades disponíveis, que vão desde o cultivo de plantas até a interação profunda com os moradores da vila. O sistema de progressão é bastante recompensador, permitindo que o jogador personalize sua fazenda e desenvolva suas habilidades de forma gradual, o que mantém o interesse a longo prazo.\r\n\r\nAlém disso, o jogo oferece um ritmo tranquilo, ideal para quem busca uma pausa do estresse cotidiano, sem abrir mão de desafios e objetivos claros. A variedade de missões, eventos sazonais e exploração de cavernas traz uma dinâmica que evita a monotonia. Outro ponto forte é a narrativa sutil e envolvente, que cria uma conexão emocional com os personagens, incentivando o jogador a investir tempo para conhecê-los melhor.\r\n\r\nEm resumo, Stardew Valley é uma excelente opção pa', '2025-06-02 17:55:23', '5', 2, 3, 1),
-(23, '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n⣿⠟⠫⢻⣿⣿⣿⣿⢟⣩⡍⣙⠛⢛⣿⣿⣿⠛⠛⠛⠛⠻⣿⣿⣿⣿⣿⡿⢿⣿\r\n⣿⠤⠄⠄⠙⢿⣿⣿⣿⡿⠿⠛⠛⢛⣧⣿⠇⠄⠂⠄⠄⠄⠘⣿⣿⣿⣿⠁⠄⢻\r\n⣿⣿⣿⣿⣶⣄⣾⣿⢟⣼⠒⢲⡔⣺⣿⣧⠄⠄⣠⠤⢤⡀⠄⠟⠉⣠⣤⣤⣤⣾\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣀⣬⣵⣿⣿⣿⣶⡤⠙⠄⠘⠃⠄⣴⣾⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢻⠿⢿⣿⣿⠿⠋⠁⠄⠂⠉⠒⢘⣿⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⡿⣡⣷⣶⣤⣤⣀⡀⠄⠄⠄⠄⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⡿⣸⣿⣿⣿⣿⣿⣿⣿⣷⣦⣰⠄⠄⠄⠄⢾⠿⢿⣿⣿⣿⣿\r\n⣿⡿⠋⣡⣾⣿⣿⣿⡟⠉⠉⠈⠉⠉⠉⠉⠉⠄⠄⠄⠑⠄⠄⠐⡇⠄⠈⠙⠛⠋\r\n⠋⠄⣾⣿⣿⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄\r\n⠄⢸⣿⣿⣿⣿⣿⣯⠄⢠⡀⠄⠄⠄⠄⠄⠄⠄⠄⣀⠄⠄⠄⠄⠁⠄⠄⠄⠄⠄\r\n⠁⢸⣿⣿⣿⣿⣿⣯⣧⣬⣿⣤⣐⣂⣄⣀⣠⡴⠖⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\r\n⠈⠈⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣽⣉⡉⠉⠈⠁⠄⠁⠄⠄⠄⠄⡂⠄⠄⠄⠄⠄\r\n⠄⠄⠙⣿⣿⠿⣿⣿⣿⣿⣷⡤⠈⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠠⠔⠄⠄⠄⠄⠄\r\n⠄⠄⠄⡈⢿⣷⣿⣿⢿⣿⣿⣷⡦⢤⡀⠄⠄⠄⠄⠄⠄⢐⣠⡿⠁⠄⠄⠄⠄⠄', '2025-06-02 17:56:39', '4', 2, 1, 2),
-(24, '(°o°)', '2025-06-30 14:42:17', '5', 2, 3, 1),
-(25, 'Miranha', '2025-06-30 14:43:09', '3', 4, 2, 2),
-(26, 'Peter Park é o melhor protagonista', '2025-06-30 14:42:39', '4', 4, 4, 2),
-(27, 'Muito emocionate, pena que o Joel...', '2025-06-02 18:17:47', '5', 5, 1, 1),
-(28, 'Faz o Elli', '2025-06-02 18:18:35', '2', 5, 1, 1),
+(23, '⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n⣿⠟⠫⢻⣿⣿⣿⣿⢟⣩⡍⣙⠛⢛⣿⣿⣿⠛⠛⠛⠛⠻⣿⣿⣿⣿⣿⡿⢿⣿\r\n⣿⠤⠄⠄⠙⢿⣿⣿⣿⡿⠿⠛⠛⢛⣧⣿⠇⠄⠂⠄⠄⠄⠘⣿⣿⣿⣿⠁⠄⢻\r\n⣿⣿⣿⣿⣶⣄⣾⣿⢟⣼⠒⢲⡔⣺⣿⣧⠄⠄⣠⠤⢤⡀⠄⠟⠉⣠⣤⣤⣤⣾\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣀⣬⣵⣿⣿⣿⣶⡤⠙⠄⠘⠃⠄⣴⣾⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢻⠿⢿⣿⣿⠿⠋⠁⠄⠂⠉⠒⢘⣿⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⣿⡿⣡⣷⣶⣤⣤⣀⡀⠄⠄⠄⠄⠄⠄⠄⣾⣿⣿⣿⣿⣿⣿\r\n⣿⣿⣿⣿⣿⣿⣿⡿⣸⣿⣿⣿⣿⣿⣿⣿⣷⣦⣰⠄⠄⠄⠄⢾⠿⢿⣿⣿⣿⣿\r\n⣿⡿⠋⣡⣾⣿⣿⣿⡟⠉⠉⠈⠉⠉⠉⠉⠉⠄⠄⠄⠑⠄⠄⠐⡇⠄⠈⠙⠛⠋\r\n⠋⠄⣾⣿⣿⣿⣿⡿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⢠⡇⠄⠄⠄⠄⠄\r\n⠄⢸⣿⣿⣿⣿⣿⣯⠄⢠⡀⠄⠄⠄⠄⠄⠄⠄⠄⣀⠄⠄⠄⠄⠁⠄⠄⠄⠄⠄\r\n⠁⢸⣿⣿⣿⣿⣿⣯⣧⣬⣿⣤⣐⣂⣄⣀⣠⡴⠖⠈⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄\r\n⠈⠈⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣽⣉⡉⠉⠈⠁⠄⠁⠄⠄⠄⠄⡂⠄⠄⠄⠄⠄\r\n⠄⠄⠙⣿⣿⠿⣿⣿⣿⣿⣷⡤⠈⠉⠉⠁⠄⠄⠄⠄⠄⠄⠄⠠⠔⠄⠄⠄⠄⠄\r\n⠄⠄⠄⡈⢿⣷⣿⣿⢿⣿⣿⣷⡦⢤⡀⠄⠄⠄⠄⠄⠄⢐⣠⡿⠁⠄⠄⠄⠄⠄', '2025-06-30 17:26:03', '4', 2, 4, 2),
+(24, '(°o°)', '2025-06-30 17:25:49', '5', 2, 2, 1),
+(27, 'Muito emocionate, pena que o Joel...', '2025-06-30 17:28:21', '5', 5, 2, 1),
+(28, 'Faz o Elli', '2025-06-30 17:28:01', '2', 5, 5, 1),
 (33, 'Não presta!', '2025-06-30 14:41:55', '5', 4, 5, 2),
 (34, 'ruim', '2025-06-16 00:52:58', '5', 4, 1, 2),
 (43, 'rancho feliz', '2025-06-18 18:45:37', '5', 2, 7, 1),
@@ -65,12 +58,7 @@ INSERT INTO `comentario` (`id_com`, `texto`, `data`, `nota_avaliacao`, `id_jogo`
 (46, 'NFS Heat resgata a essência das melhores fases da franquia.', '2025-06-18 19:18:02', '5', 3, 6, 1),
 (47, 'Jogo relaxante, perfeito para quem busca uma pausa da rotina', '2025-06-18 19:18:35', '5', 2, 5, 1),
 (48, 'Silent Hill 2 é uma obra-prima que mistura horror, drama e tragédia humana', '2025-06-18 19:19:11', '5', 1, 7, 1),
-(49, '👨‍🌾😾🌽🍓🍅', '2025-06-18 20:16:59', '4', 2, 2, 1),
-(50, '😲😲😲😲', '2025-06-18 20:17:47', '4', 1, 2, 1),
-(51, 'A jogabilidade é boa mas o preço não compensa.', '2025-06-18 20:19:37', '2', 3, 2, 1),
-(52, '⠀⣠⣤⣶⣶⣦⣄⡀  ⠀⢀⣤⣴⣶⣶⣤⣀⠀\r\n⣼⣿⣿⣿⣿⣿⣿⣷⣤⣾⣿⣿⣿⣿⣿⣿⣧\r\n⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿\r\n⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏\r\n⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠀\r\n⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀\r\n⠀⠀⠀⠀⠀⠉⢿⣿⣿⣿⠟⠋⠀⠀⠀⠀⠀\r\n⠀⠀⠀⠀⠀⠀⠀⠙⠻⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀', '2025-06-18 20:20:58', '5', 5, 2, 1),
-(53, '░░▄█▀▀▀░░░░░░░░▀▀▀█▄\r\n▄███▄▄░░▀▄██▄▀░░▄▄███▄\r\n▀██▄▄▄▄████████▄▄▄▄██▀\r\n░░▄▄▄▄██████████▄▄▄▄\r\n░▐▐▀▐▀░▀██████▀░▀▌▀▌▌', '2025-06-18 20:21:56', '5', 4, 2, 2),
-(54, '░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n█▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n█▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n░░░░█░░░▀▀▄░█░░░█░███████░█\r\n░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█', '2025-06-18 20:23:25', '3', 1, 7, 1),
+(54, '░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄\r\n░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄\r\n░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█\r\n░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░█\r\n░▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░█\r\n█▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒█\r\n█▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█\r\n░░█░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█\r\n░░░█░░██░░▀█▄▄▄█▄▄█▄████░█\r\n░░░░█░░░▀▀▄░█░░░█░███████░█\r\n░░░░░▀▄░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░█\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░█\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█', '2025-06-30 17:27:04', '3', 1, 4, 1),
 (55, '░░░░░░███████ ]▄▄▄▄▄▄▄▄\r\n ▂▄▅█████████▅▄▃▂        \r\n[███████████████████]. \r\n◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤..', '2025-06-18 20:26:25', '0', 3, 7, 1),
 (56, '░░░░░░░░░░░░░░░░▄▓▄\r\n░░░░▄█▄░░░░░░░░▄▓▓▓▄\r\n░░▄█████▄░░░░░▄▓▓▓▓▓▄\r\n░▀██┼█┼██▀░░░▄▓▓▓▓▓▓▓▄\r\n▄▄███████▄▄▄▄▄▄▄▄█▄▄▄▄', '2025-06-18 20:27:42', '5', 2, 7, 1),
 (57, 'Um jogo para se emocionar!\r\n\r\nNão sou de escrever tantas resenhas detalhadas na Steam, mas acabei de zerar TLOU 2 no exato momento em que estou escrevendo isso, e acho que seria injusto não falar de uma história tão fantástica quanto este jogo é! Pouparei os spoilers por aqui porque já sofri muito com eles nos últimos 4 anos em que aguardei pela chegada dessa franquia para PC, e acho que, apesar de não ter afetado tanto a minha diversão experienciando este jogo, acabou limitando a minha emoção e na imersão que eu poderia ter tido de uma maneira muito maior se não soubesse de absolutamente nada do que aconteceria.\r\n\r\nJogabilidade: 10/10\r\n\r\nPra quem acompanha páginas de jogos no falecido \"Twitter\", sabe que posts elogiando a gameplay de TLOU 2 são tão genéricos quanto falar do jardineiro do Leicester City, mas convenhamos: que jogabilidade delicinha! Variar a maneira de matar inimigos, seja no 100% stealthy ou botando o p4u na mesa e chegando no estilo \"tiro, porrada e bomba\" é uma das m', '2025-06-18 20:29:49', '5', 5, 1, 1),
@@ -101,14 +89,15 @@ CREATE TABLE `jogo` (
 --
 
 INSERT INTO `jogo` (`id`, `nome`, `url_img`, `descricao`, `nota`, `slug`, `plataforma`) VALUES
-(1, 'Silent Hill 2', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5l7s.png', 'Atraído por uma carta misteriosa de sua falecida esposa, James explora a misteriosa cidade de Silent Hill. O que o aguarda é um pesadelo encoberto por ferrugem e névoa e habitado por monstros. ', 4, 'silent-hill-2', 1),
-(2, 'Stardew Valley', 'https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.png', '“Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida.”', 4, 'stardew-valley', 1),
+(1, 'Silent Hill 2', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5l7s.png', 'Atraído por uma carta misteriosa de sua falecida esposa, James explora a misteriosa cidade de Silent Hill. O que o aguarda é um pesadelo encoberto por ferrugem e névoa e habitado por monstros. ', 3, 'silent-hill-2', 1),
+(2, 'Stardew Valley', 'https://images.igdb.com/igdb/image/upload/t_cover_big/xrpmydnu9rpxvxfjkiu7.png', '“Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida.”', 5, 'stardew-valley', 1),
 (3, 'NFS Heat', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co209t.png', 'Trabalhe de dia e arrisque tudo à noite em Need for Speed™ Heat, um jogo eletrizante de corridas de rua, onde a lei desaparece com o pôr do sol.', 2, 'need-for-speed-heat', 1),
 (4, 'Marvel\'s Spider-Man 2: Launch Edition', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6niz.png', 'Pendure-se, pule e plane com as novas Asas de Teia para percorrer a Nova York da Marvel. Alterne rapidamente entre Peter Parker e Miles Morales para jogar histórias diferentes e usar novos poderes épicos enquanto o infame vilão Venom ameaça a vida deles, ', 4, 'marvels-spider-man-2-launch-edition', 2),
 (5, 'The Last of Us', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5ziw.png', 'Em uma civilização devastada, em que infectados e sobreviventes veteranos estão à solta, Joel, um protagonista abatido, é contratado para tirar uma garota de 14 anos, Ellie, de uma zona de quarentena militar. No entanto, o que começa como um pequeno servi', 4, 'the-last-of-us', 1),
 (8, 'Grand Theft Auto: San Andreas', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2lb9.jpg', 'Returning after his mother\\\'s murder to the semi-fictional city of Los Santos (based on Los Angeles), Carl Johnson, a former gang banger, must take back the streets for his family and friends by gaining respect and once again gaining control over the stre', 0, 'grand-theft-auto-san-andreas', 3),
 (10, 'The Witcher 3: Wild Hunt', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co1wyy.jpg', 'The Witcher 3: Wild Hunt is an open-world action role-playing game developed by CD Projekt Red.\\n\\nSet in a dark fantasy world, the game follows Geralt of Rivia, a monster hunter searching for his adopted daughter, Ciri, while navigating political conflic', 5, 'the-witcher-3-wild-hunt', 3),
-(11, 'Far Cry: Primal', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co28ha.jpg', 'Gamers play as TAKKAR, a seasoned hunter and the last surviving member of his hunting group. Arriving in the majestic and savage land of Oros, players will pursue one single goal; survive in a world where humans are the prey. They will meet a cast of memo', 5, 'far-cry-primal', 1);
+(11, 'Far Cry: Primal', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co28ha.jpg', 'Gamers play as TAKKAR, a seasoned hunter and the last surviving member of his hunting group. Arriving in the majestic and savage land of Oros, players will pursue one single goal; survive in a world where humans are the prey. They will meet a cast of memo', 5, 'far-cry-primal', 1),
+(12, 'Dota 2', 'https://images.igdb.com/igdb/image/upload/t_cover_big/co6ene.jpg', 'Dota 2 is a multiplayer online battle arena video game and the stand-alone sequel to the Defense of the Ancients (DotA) mod. With regular updates that ensure a constant evolution of gameplay, features, and heroes, Dota 2 has taken on a life of its own.', 0, 'dota-2', 1);
 
 -- --------------------------------------------------------
 
@@ -154,7 +143,8 @@ CREATE TABLE `solicitacao_jogo` (
 --
 
 INSERT INTO `solicitacao_jogo` (`id_solicitacao`, `id_usuario`, `titulo_solicitado`, `desc_solicitado`, `solicitacao_atendida`) VALUES
-(2, 5, 'GTA San Andreas', 'Queria GTA San Andreas... amo esse jogo! Por favor, incluam ae', 1);
+(2, 5, 'GTA San Andreas', 'Queria GTA San Andreas... amo esse jogo! Por favor, incluam ae', 1),
+(3, 7, 'Dota', '', 1);
 
 -- --------------------------------------------------------
 
@@ -177,12 +167,13 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `nome`, `email`, `senha`, `is_superuser`, `avatar`) VALUES
 (1, 'Leandro', 'leandro@gmail.com', '$2y$10$mOxF3h9pAdFCA/gLM3Tr5uUa.9uzkn62VDyWeEKnV9jPUdjpFu5Za', NULL, 4),
-(2, 'maykon', 'maykon@gmail.com', 'maykon123', NULL, 6),
+(2, 'maykon', 'maykon@gmail.com', '$2y$10$GqF4oIOJtvNoiSs/Qz3FwOSYhRq3zNwaIroXDRGurIr13uWUxT1NC', NULL, NULL),
 (3, 'joana', 'joana@gmail', '$2y$10$Zmu8ckQGy3qe3bDYHPSg3.jJPzskcKjyQ7v01c5JVN8HoyL72EpAm', NULL, 5),
-(4, 'jao', 'jao@gmail.com', 'jao123', NULL, 14),
+(4, 'jao', 'jao@gmail.com', '$2y$10$c90m13s3fdjv9Bmg8777je05caInZJ.cVwwi8oWcnRYBJWnfVf3xm', NULL, NULL),
 (5, 'lokoabreu', 'lokoabreu@gmail.com', '$2y$10$iXgMq24L/eJbONg1I3UpG.K8XHYzEEkI9o6SYYkZL8SUWSsSNRUmK', NULL, 8),
 (6, 'Kalel', 'kalel@hotmail.com', '$2y$10$sI29sK8QrMoXxOkMnUmyi.T.RpMzHi0z0Q7Vr1p71wyHax8FjRITe', 1, 13),
-(7, 'Diego', 'diego@gmail.com', '$2y$10$vrusuh3ttVs9hFW5.yvkbOkyBVKK7WXx31GgzjnY9.pccttMnlMB6', NULL, 11);
+(7, 'Diego', 'diego@gmail.com', '$2y$10$vrusuh3ttVs9hFW5.yvkbOkyBVKK7WXx31GgzjnY9.pccttMnlMB6', NULL, 11),
+(10, 'admin', 'admin@criticalhit.com', '$2y$10$ajnrB7ONWL0rMbAPzMlUQ.QIi86o3XYwCnRZtSF83hlNGY3K1SrDW', 1, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -230,25 +221,25 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id_com` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `solicitacao_jogo`
 --
 ALTER TABLE `solicitacao_jogo`
-  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_solicitacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restrições para tabelas despejadas
