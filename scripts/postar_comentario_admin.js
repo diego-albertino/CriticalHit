@@ -42,7 +42,7 @@ form.addEventListener("submit", (event) => {
             ${texto_comentario_formatado}<br>
             <span class="star-commentPost">${"★".repeat(numero_estrelas || 0)}</span>
           </span>
-          <button class="btn-excluir-comentario btn btn-sm btn-danger ms-3" data-id="${idComentarioFake}" style="align-self:flex-end;">Remover</button>
+          <button class="btn-excluir-comentario btn btn-sm btn-danger ms-3 disabled" data-id="${idComentarioFake}" style="align-self:flex-end;">Recarregue a página para alterar ou remover.</button>
         `;
 
         commentPost.appendChild(p);
