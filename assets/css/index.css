@@ -11,15 +11,27 @@ body {
 .carousel-control-prev-icon {
   background-image: url("../pictures/seta.png");
   opacity: 1;
-  margin-right: 60%;
   width: 50px;
   height: 50px;
+}
+
+.carousel-control-prev{
+  width: 50px; /* Largura do botão de controle anterior */
+  height: 50px;
+  margin-top: 180px;
+  margin-left: 25px;
+}
+
+.carousel-control-next{
+  width: 50px; /* Largura do botão de controle anterior */
+  height: 50px;
+  margin-top: 200px;
+  margin-right: 25px;
 }
 
 .carousel-control-next-icon {
   background-image: url("../pictures/seta2.png");
   opacity: 1;
-  margin-left: 60%;
   width: 50px;
   height: 50px;
 }
@@ -47,6 +59,8 @@ body {
   color: #6f6f6f;
   margin-right: 20px;
 }
+
+
 
 #critical {
   color: #fe5655;
@@ -138,6 +152,7 @@ h3 {
   object-fit: cover;
   border-radius: 10px;
 }
+
 
 .game-info {
   display: flex;
