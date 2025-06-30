@@ -68,13 +68,14 @@ if ($result->num_rows > 0) {
         $avatarId = intval($row['avatar']);
         $avatarUrl = getAvatarUrl($avatarId, $avatars);
 
-        echo "<p class='comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap d-flex justify-content-between align-items-end position-relative'>
-          <span class='d-flex align-items-center' style='gap: 8px;'>
-            <img src='" . htmlspecialchars($avatarUrl) . "' alt='Avatar de " . $nome_usuario . "' style='width:32px; height:32px; border-radius:50%; object-fit:cover;'>
-            <strong>{$nome_usuario}:</strong>
-          </span><br>
-          {$texto_comentario}<br>
-          <span class='star-commentPost'>{$stars}</span>";
+        echo "<p class='comment-paragraph rounded-2 bg-body-secondary p-3 mt-4 text-wrap d-flex align-items-center' style='gap:8px;'>
+            <span>
+                <img src='" . htmlspecialchars($avatarUrl) . "' alt='Avatar de {$nome_usuario}' style='width:32px; height:32px; border-radius:50%; object-fit:cover;'>
+                <strong>{$nome_usuario}:</strong><br>
+                {$texto_comentario}<br>
+                <span class='star-commentPost'>{$stars}</span>
+            </span>
+          </p>";
 
         if ($isAdmin) {
             // Passa o slug no link junto com id_com
